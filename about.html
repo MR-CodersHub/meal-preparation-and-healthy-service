@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story | FuelUp Gourmet Cloud Kitchen</title>
+    <meta name="description" content="Discover the passion behind FuelUp. We're a technology-driven cloud kitchen redefining the gourmet delivery experience with clinical precision and culinary mastery.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --accent-gradient: linear-gradient(135deg, var(--primary) 0%, #ff9900 100%);
+        }
+
+        /* Hero Enhancement */
+        .about-hero {
+            position: relative;
+            padding: 220px 0 160px;
+            background: var(--bg-dark);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 204, 0, 0.15) 0%, transparent 70%);
+            z-index: 1;
+        }
+
+        .hero-visual {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            mask-image: radial-gradient(ellipse at center, black 40%, transparent 100%);
+            -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 100%);
+            opacity: 0.25;
+            z-index: 0;
+            filter: grayscale(30%) contrast(110%);
+        }
+
+        .hero-tag {
+            display: inline-block;
+            padding: 10px 24px;
+            background: rgba(255, 204, 0, 0.1);
+            border: 1px solid rgba(255, 204, 0, 0.3);
+            border-radius: 100px;
+            color: var(--primary);
+            font-weight: 800;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(5px);
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 10vw, 5.5rem);
+            line-height: 1.05;
+            margin-bottom: 35px;
+            font-weight: 900;
+            letter-spacing: -2px;
+        }
+
+        .hero-desc {
+            font-size: clamp(1.1rem, 3vw, 1.35rem);
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 45px;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Stats Grid */
+        .stats-banner {
+            margin-top: -60px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2px;
+            background: var(--border-color);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .stat-item {
+            background: var(--bg-card);
+            padding: 40px 20px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .stat-item:hover {
+            background: rgba(255, 204, 0, 0.05);
+        }
+
+        .stat-num {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 5px;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Journey Timeline */
+        .timeline-section {
+            position: relative;
+            padding: 120px 0;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 60px auto 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: var(--border-color);
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 50%;
+            position: relative;
+            margin-bottom: 60px;
+        }
+
+        .timeline-item:nth-child(even) {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: 50%;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            width: 16px;
+            height: 16px;
+            background: var(--primary);
+            border-radius: 50%;
+            box-shadow: 0 0 15px var(--primary);
+            z-index: 2;
+        }
+
+        .timeline-content {
+            width: 85%;
+            padding: 30px;
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: 40px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 40px;
+        }
+
+        .timeline-content:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .timeline-year {
+            color: var(--primary);
+            font-weight: 800;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* Team Section */
+        .team-section {
+            background: var(--bg-surface);
+            padding: 120px 0;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .team-card {
+            position: relative;
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        }
+
+        .team-img-box {
+            height: 320px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .team-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.6s ease;
+            filter: grayscale(20%) brightness(0.9);
+        }
+
+        .team-card:hover .team-img {
+            transform: scale(1.1);
+            filter: grayscale(0%) brightness(1);
+        }
+
+        .team-socials {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            display: flex;
+            gap: 15px;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .team-card:hover .team-socials {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: #fff;
+            transform: scale(1.1);
+        }
+
+        .team-info {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .team-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .team-role {
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Quality Section */
+        .quality-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 25px;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .quality-feature:hover {
+            border-color: var(--primary);
+            transform: scale(1.02);
+        }
+
+        .q-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 204, 0, 0.1);
+            color: var(--primary);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            flex-shrink: 0;
+        }
+
+        /* Quality Section Image Wrapper */
+        .img-square-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 100%; /* 1:1 Aspect Ratio */
+            border: 2px solid var(--primary);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(255, 204, 0, 0.15);
+        }
+
+        .img-square-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .img-square-wrapper:hover img {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 992px) {
+            .about-hero {
+                padding: 160px 0 100px;
+                text-align: center;
+            }
+            .hero-visual {
+                width: 100%;
+                height: 100%;
+                right: 0;
+                opacity: 0.2;
+                mask-image: radial-gradient(circle, black 30%, transparent 100%);
+            }
+            .hero-desc {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .team-grid {
+                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav aria-label="Main Navigation">
+                <a href="index.html" class="logo" aria-label="FuelUp Home">FUEL<span>UP</span></a>
+                <ul class="nav-links" role="menubar">
+                    <li role="none"><a href="index.html" role="menuitem">Home</a></li>
+                    <li role="none"><a href="home2.html" role="menuitem">Home2</a></li>
+                    <li role="none"><a href="about.html" class="active" role="menuitem">About Us</a></li>
+                    <li role="none"><a href="menu.html" role="menuitem">Menu</a></li>
+                    <li role="none"><a href="services.html" role="menuitem">Services</a></li>
+                    <li role="none"><a href="blog.html" role="menuitem">Blog</a></li>
+                    <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
+                </ul>
+                <div class="nav-btns">
+                    
+                    <a href="cart.html" class="profile-btn" style="position: relative;">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                    <div class="profile-dropdown">
+                        <button class="profile-btn"><i class="fas fa-user"></i></button>
+                        <div class="dropdown-menu">
+                            <a href="login.html" class="dropdown-item"><i class="fas fa-sign-in-alt"></i> Login / Signup</a>
+                            <a href="admin.html" class="dropdown-item"><i class="fas fa-user-shield"></i> Admin Dashboard</a>
+                            <a href="dashboard.html" class="dropdown-item"><i class="fas fa-user-circle"></i> User Dashboard</a>
+                        </div>
+                    </div>
+                    <a href="dashboard.html" class="btn btn-primary tracker-btn" style="padding: 8px 20px;">Live Tracker</a>
+                    <button class="menu-toggle" aria-label="Toggle Menu"><i class="fas fa-bars"></i></button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- About Hero -->
+    <section class="about-hero">
+        <div class="hero-visual"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <div data-aos="fade-up">
+                <span class="hero-tag">Est. 2021</span>
+                <h1 class="hero-title">Redefining the <br><span class="text-gradient">Art of Delivery</span></h1>
+                <p class="hero-desc">
+                    FuelUp is more than a kitchen; it's a culinary technology powerhouse dedicated to delivering 
+                    Michelin-star experiences directly to your doorstep with surgical precision.
+                </p>
+                <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+                    <a href="menu.html" class="btn btn-primary" style="padding: 18px 45px; border-radius: 15px; font-weight: 700;">Explore Menu</a>
+                    <a href="#team" class="btn btn-outline" style="border: 1px solid var(--border-color); padding: 18px 45px; border-radius: 15px; font-weight: 700; color: #fff;">The Squad</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Banner -->
+    <section class="stats-banner">
+        <div class="container">
+            <div class="stats-grid" data-aos="fade-up">
+                <div class="stat-item">
+                    <span class="stat-num">25+</span>
+                    <span class="stat-label">Cloud Hubs</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">1.2M</span>
+                    <span class="stat-label">Happy Foodies</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">4.9</span>
+                    <span class="stat-label">Avg Rating</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">15m</span>
+                    <span class="stat-label">Avg Prep Time</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Story -->
+    <section id="story" class="section-padding">
+        <div class="container">
+            <div style="display: flex; align-items: center; gap: 80px; flex-wrap: wrap;">
+                <div style="flex: 1;" data-aos="fade-right">
+                    <span style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">The Origin</span>
+                    <h2 style="font-size: clamp(2rem, 5vw, 3.5rem); margin: 20px 0; line-height: 1.1;">Born in Chaos, <br><span class="text-gradient">Forged in Innovation</span></h2>
+                    <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 25px;">
+                        The idea for FuelUp was born in 2021 when our founders noticed a glaring problem: food delivery was fast, but rarely "good." Meals arrived cold, soggy, and devoid of the passion that went into their creation.
+                    </p>
+                    <p style="color: var(--text-muted); line-height: 1.8;">
+                        We decided to flip the script. By removing the expensive overhead of a dining room, we've invested every penny into advanced thermal technology, clinical-grade hygiene, and world-class culinary talent. The result? Food that stays exactly as the chef intended until it reaches your table.
+                    </p>
+                </div>
+                <div style="flex: 1;" data-aos="fade-left">
+                    <div style="position: relative; max-width: 500px; margin: 0 auto;">
+                        <div class="img-square-wrapper">
+                            <img src="https://images.unsplash.com/photo-1556910110-a5a63dfd393c?auto=format&fit=crop&w=800&q=80" alt="Kitchen Prep" class="premium-img">
+                        </div>
+                        <div class="glass" style="position: absolute; bottom: -20px; right: -20px; padding: 25px; border-radius: var(--radius-md); border: 1px solid var(--primary); max-width: 220px; z-index: 2;">
+                            <h4 style="color: var(--primary); margin-bottom: 5px; font-size: 1.1rem;">ISO 22000</h4>
+                            <p style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.4;">Certified Global Safety Standards</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="timeline-section" style="background: var(--bg-surface);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our <span class="text-gradient">Evolution</span></h2>
+                <p style="color: var(--text-muted);">The milestones that shaped the future of cloud kitchens.</p>
+            </div>
+
+            <div class="timeline">
+                    <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">2021</span>
+                        <h4><i class="fas fa-rocket" style="margin-right: 10px; color: var(--primary);"></i>The Spark</h4>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">FuelUp launches its first experimental hub in Bangalore with 5 chefs and a dream.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">2022</span>
+                        <h4><i class="fas fa-map-marked-alt" style="margin-right: 10px; color: var(--primary);"></i>Going Hyper-Local</h4>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">Expansion to 10 cities across India, introducing AI-driven delivery routing.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">2023</span>
+                        <h4><i class="fas fa-star" style="margin-right: 10px; color: var(--primary);"></i>Gourmet 2.0</h4>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">Partnership with Michelin-star chefs to launch our premium "Signature" line.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">2024</span>
+                        <h4><i class="fas fa-infinity" style="margin-right: 10px; color: var(--primary);"></i>Future of Food</h4>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">Introducing zero-waste smart packaging and vertical farm integration.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Squad -->
+    <section class="team-section" id="team">
+        <div class="container">
+            <div class="section-title">
+                <span class="hero-tag">The Brains</span>
+                <h2>The <span class="text-gradient">FuelUp Squad</span></h2>
+                <p style="color: var(--text-muted);">Meet the visionaries behind the culinary revolution.</p>
+            </div>
+            <div class="team-grid">
+                <!-- Member 1 -->
+                <div class="team-card" data-aos="fade-up">
+                    <div class="team-img-box">
+                        <img src="chef_marcus_thorne.png" alt="Marcus" class="team-img">
+                        <div class="team-socials">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h4 class="team-name">Chef Marcus Thorne</h4>
+                        <span class="team-role">Head of Culinary Ops</span>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 15px;">Former 2-star Michelin lead with a passion for hyper-efficient kitchen systems.</p>
+                    </div>
+                </div>
+                <!-- Member 2 -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-img-box">
+                        <img src="sarah_finch.png" alt="Sarah" class="team-img">
+                        <div class="team-socials">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h4 class="team-name">Dr. Sarah Finch</h4>
+                        <span class="team-role">Nutrition Strategist</span>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 15px;">PhD in Nutrition Science, ensuring every bite is a boost for your body.</p>
+                    </div>
+                </div>
+                <!-- Member 3 -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-img-box">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="David" class="team-img">
+                        <div class="team-socials">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h4 class="team-name">David Reynolds</h4>
+                        <span class="team-role">Tech & Logistics Lead</span>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 15px;">The architect of our proprietary AI-routing and kitchen automation stack.</p>
+                    </div>
+                </div>
+                <!-- Member 4 -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="team-img-box">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Elena" class="team-img">
+                        <div class="team-socials">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h4 class="team-name">Elena Vance</h4>
+                        <span class="team-role">Chief Operating Officer</span>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 15px;">Scaling our cloud kitchen network across 12 cities with clinical precision.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quality Creeds -->
+    <section class="section-padding">
+        <div class="container">
+            <div style="display: flex; align-items: flex-start; gap: 80px; flex-wrap: wrap;">
+                <div style="flex: 1;" data-aos="fade-right">
+                    <h2 style="font-size: 3rem; margin-bottom: 30px;">Our <span class="text-gradient">Quality Creed</span></h2>
+                    <p style="color: var(--text-muted); margin-bottom: 40px;">We don't just cook; we engineer the perfect meal. Here's the FuelUp standard.</p>
+                    
+                    <div class="quality-feature">
+                        <div class="q-icon"><i class="fas fa-leaf"></i></div>
+                        <div>
+                            <h4>Ethical Sourcing</h4>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;">100% of our produce is sourced from local regenerative farms within 50km of our hubs.</p>
+                        </div>
+                    </div>
+                    <div class="quality-feature">
+                        <div class="q-icon"><i class="fas fa-microscope"></i></div>
+                        <div>
+                            <h4>Surgical Hygiene</h4>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;">Hourly sanitation cycles and air filtration that exceeds hospital standards.</p>
+                        </div>
+                    </div>
+                    <div class="quality-feature">
+                        <div class="q-icon"><i class="fas fa-box-open"></i></div>
+                        <div>
+                            <h4>Smart Packaging</h4>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;">Our containers are compostable and designed with thermal vents to prevent sogginess.</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="flex: 0.8; display: flex; justify-content: center;" data-aos="fade-left">
+                    <div style="width: 100%; max-width: 500px;">
+                        <div class="img-square-wrapper" style="border-color: var(--primary);">
+                            <img src="quality_engineering.png" alt="Engineering Quality" class="premium-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="index.html" class="logo">FUEL<span>UP</span></a>
+                    <p class="footer-logo-desc">Redefining the dining experience with chef-crafted gourmet delivery. Fresh
+                        ingredients, lightning speed, clinical precision.</p>
+                    <div class="footer-socials">
+                        <a href="https://www.facebook.com" target="_blank""><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com" target="_blank""><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com" target="_blank""><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-title">Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="services.html">Services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="blog.html">Kitchen Blog</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Newsletter</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">Join 50k+ foodies for exclusive drops.</p>
+                    <form style="display: flex; gap: 10px;">
+                        <input type="email" placeholder="Email Address" required
+                            style="flex: 1; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-main);">
+                        <button class="btn btn-primary" style="padding: 12px 15px;"><i
+                                class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 FuelUp Kitchens. All Rights Reserved. Designed for the Gourmet Era.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Simple Counter Animation (Optional enhancement)
+        const counters = document.querySelectorAll('.stat-num');
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const text = counter.innerText;
+                const targetMatch = text.match(/[\d.]+/);
+                if (!targetMatch) return;
+                const target = parseFloat(targetMatch[0]);
+                const suffix = text.replace(/[\d.]/g, '');
+                let count = 0;
+                const speed = target / 50;
+                
+                const updateCount = () => {
+                    if (count < target) {
+                        count += speed;
+                        counter.innerText = (count.toFixed(suffix === '' ? 0 : 1)) + suffix;
+                        setTimeout(updateCount, 20);
+                    } else {
+                        counter.innerText = target + suffix;
+                    }
+                };
+                updateCount();
+            });
+        };
+
+        // Trigger counter when section is in view
+        const observer = new IntersectionObserver((entries) => {
+            if(entries[0] && entries[0].isIntersecting) {
+                animateCounters();
+                observer.unobserve(entries[0].target);
+            }
+        }, { threshold: 0.5 });
+
+        const statsBanner = document.querySelector('.stats-banner');
+        if (statsBanner) observer.observe(statsBanner);
+    </script>
+</body>
+</html>

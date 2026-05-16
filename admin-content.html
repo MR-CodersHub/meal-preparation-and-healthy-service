@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Management | Admin Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar-overlay"></div>
+    <div class="dashboard-wrapper">
+        <div class="sidebar">
+            <a href="index.html" class="logo">FUEL<span>UP</span></a>
+            <nav class="sidebar-nav" style="height: calc(100% - 100px); display: flex; flex-direction: column;">
+                <div style="flex: 1;">
+                    <a href="admin.html" class="nav-item"><i class="fas fa-th-large"></i> Overview</a>
+                    <a href="admin-revenue.html" class="nav-item"><i class="fas fa-chart-line"></i> Revenue Analytics</a>
+                    <a href="admin-users.html" class="nav-item"><i class="fas fa-users"></i> User Management</a>
+                    <a href="admin-content.html" class="nav-item active"><i class="fas fa-file-alt"></i> Content Management</a>
+                    <a href="admin-orders.html" class="nav-item"><i class="fas fa-shopping-basket"></i> Orders Management</a>
+                    <a href="admin-tracking.html" class="nav-item"><i class="fas fa-truck"></i> Delivery Tracking</a>
+                    <a href="admin-notifications.html" class="nav-item"><i class="fas fa-bell"></i> Notifications</a>
+                    <a href="admin-settings.html" class="nav-item"><i class="fas fa-cog"></i> Settings</a>
+                </div>
+                <a href="index.html" class="nav-item" style="margin-top: auto; color: #ff4d4d;"><i class="fas fa-sign-out-alt"></i> Back to Site</a>
+            </nav>
+        </div>
+
+        <div class="main-content">
+            <div class="mobile-dash-header" style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                    <button class="dash-toggle" aria-label="Toggle Sidebar" style="background: none; border: none; outline: none;">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 style="font-size: clamp(1.2rem, 5vw, 2.5rem); margin: 0;">Content <span class="text-gradient">Management</span></h1>
+                </div>
+            <div class="dash-card" style="margin-top: 40px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+                    <h3>Menu Items List</h3>
+                    <button class="btn btn-primary" style="padding: 10px 20px;">+ Add New Item</button>
+                </div>
+                <table class="dash-table">
+                    <thead>
+                        <tr>
+                            <th>Item Name</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Royal Truffle Burger</td>
+                            <td>Gourmet Burgers</td>
+                            <td>$18.50</td>
+                            <td><span style="color: #4caf50;">In Stock</span></td>
+                            <td><i class="fas fa-edit"></i> <i class="fas fa-trash" style="margin-left: 10px;"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>

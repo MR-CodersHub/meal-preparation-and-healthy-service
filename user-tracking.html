@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Tracking | FuelUp Kitchen</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar-overlay"></div>
+    <div class="dashboard-wrapper">
+        <div class="sidebar">
+            <a href="index.html" class="logo">FUEL<span>UP</span></a>
+            <nav class="sidebar-nav" style="height: calc(100% - 100px); display: flex; flex-direction: column;">
+                <div style="flex: 1;">
+                    <a href="dashboard.html" class="nav-item"><i class="fas fa-user-circle"></i> Profile</a>
+                    <a href="user-orders.html" class="nav-item"><i class="fas fa-history"></i> Order History</a>
+                    <a href="user-favorites.html" class="nav-item"><i class="fas fa-heart"></i> Saved Items</a>
+                    <a href="user-messages.html" class="nav-item"><i class="fas fa-comment-dots"></i> Messages</a>
+                    <a href="user-tracking.html" class="nav-item active"><i class="fas fa-map-marker-alt"></i> Tracking</a>
+                    <a href="user-settings.html" class="nav-item"><i class="fas fa-cog"></i> Settings</a>
+                </div>
+                <a href="index.html" class="nav-item" style="color: #ff4d4d; margin-top: auto;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </div>
+
+        <div class="main-content">
+            <div class="mobile-dash-header" style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                    <button class="dash-toggle" aria-label="Toggle Sidebar" style="background: none; border: none; outline: none;">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 style="font-size: clamp(1.2rem, 5vw, 2.5rem); margin: 0;">Live <span class="text-gradient">Order Tracking</span></h1>
+                </div>
+            <p style="color: var(--text-muted); margin-bottom: 40px;">Watch your gourmet meal make its way to you.</p>
+
+            <div class="dash-card">
+                <div style="text-align: center; margin-bottom: 40px;">
+                    <h2 style="color: var(--primary);">ETA: 12 Minutes</h2>
+                    <p style="color: var(--text-muted);">Your rider is 2.4km away</p>
+                </div>
+
+                <!-- Progress Bar -->
+                <div style="display: flex; justify-content: space-between; margin-bottom: 20px; position: relative;">
+                    <div style="text-align: center; flex: 1;">
+                        <div style="width: 40px; height: 40px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #000; margin: 0 auto 10px;">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <span style="font-size: 0.8rem;">Prepared</span>
+                    </div>
+                    <div style="text-align: center; flex: 1;">
+                        <div style="width: 40px; height: 40px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #000; margin: 0 auto 10px;">
+                            <i class="fas fa-motorcycle"></i>
+                        </div>
+                        <span style="font-size: 0.8rem;">On Way</span>
+                    </div>
+                    <div style="text-align: center; flex: 1;">
+                        <div style="width: 40px; height: 40px; background: var(--border-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--text-muted); margin: 0 auto 10px;">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <span style="font-size: 0.8rem;">Arrived</span>
+                    </div>
+                    
+                    <!-- Line -->
+                    <div style="position: absolute; top: 20px; left: 16.6%; width: 66.6%; height: 2px; background: var(--border-color); z-index: -1;">
+                        <div style="width: 50%; height: 100%; background: var(--primary);"></div>
+                    </div>
+                </div>
+
+                <!-- Mock Map -->
+                <div class="glass" style="height: 400px; border-radius: var(--radius-lg); background: url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1000&q=80'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center;">
+                    <div class="glass" style="padding: 20px; border-radius: var(--radius-md); text-align: center; border: 2px solid var(--primary);">
+                        <i class="fas fa-motorcycle" style="font-size: 2rem; color: var(--primary); animation: float 3s infinite;"></i>
+                        <p style="margin-top: 10px; font-weight: 700;">Rider Alex is near!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>

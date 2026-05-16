@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved Favorites | FuelUp Kitchen</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar-overlay"></div>
+    <div class="dashboard-wrapper">
+        <div class="sidebar">
+            <a href="index.html" class="logo">FUEL<span>UP</span></a>
+            <nav class="sidebar-nav" style="height: calc(100% - 100px); display: flex; flex-direction: column;">
+                <div style="flex: 1;">
+                    <a href="dashboard.html" class="nav-item"><i class="fas fa-user-circle"></i> Profile</a>
+                    <a href="user-orders.html" class="nav-item"><i class="fas fa-history"></i> Order History</a>
+                    <a href="user-favorites.html" class="nav-item active"><i class="fas fa-heart"></i> Saved Items</a>
+                    <a href="user-messages.html" class="nav-item"><i class="fas fa-comment-dots"></i> Messages</a>
+                    <a href="user-tracking.html" class="nav-item"><i class="fas fa-map-marker-alt"></i> Tracking</a>
+                    <a href="user-settings.html" class="nav-item"><i class="fas fa-cog"></i> Settings</a>
+                </div>
+                <a href="index.html" class="nav-item" style="color: #ff4d4d; margin-top: auto;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </div>
+
+        <div class="main-content">
+            <div class="mobile-dash-header" style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                    <button class="dash-toggle" aria-label="Toggle Sidebar" style="background: none; border: none; outline: none;">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 style="font-size: clamp(1.2rem, 5vw, 2.5rem); margin: 0;">Your <span class="text-gradient">Favorites</span></h1>
+                </div>
+            <p style="color: var(--text-muted); margin-bottom: 40px;">Your most-loved gourmet meals, saved for quick ordering.</p>
+
+            <div class="meal-grid">
+                <div class="meal-card">
+                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=400&q=80" class="meal-img">
+                    <div class="meal-info">
+                        <h3>Vegan Buddha Bowl</h3>
+                        <div class="meal-meta">
+                            <span><i class="fas fa-star" style="color: var(--primary);"></i> 4.9</span>
+                            <span>$16.00</span>
+                        </div>
+                        <button class="btn btn-primary" style="width: 100%;">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="meal-card">
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=400&q=80" class="meal-img">
+                    <div class="meal-info">
+                        <h3>BBQ Chicken Feast</h3>
+                        <div class="meal-meta">
+                            <span><i class="fas fa-star" style="color: var(--primary);"></i> 4.8</span>
+                            <span>$21.00</span>
+                        </div>
+                        <button class="btn btn-primary" style="width: 100%;">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>

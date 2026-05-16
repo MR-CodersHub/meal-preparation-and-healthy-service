@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | FuelUp Kitchen Stories</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .blog-header {
+            padding: 100px 0 50px;
+            text-align: center;
+        }
+        .search-bar {
+            max-width: 600px;
+            margin: 30px auto;
+            position: relative;
+        }
+        .search-bar input {
+            width: 100%;
+            padding: 15px 25px;
+            border-radius: 30px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: #fff;
+            font-size: 1rem;
+        }
+        .search-bar i {
+            position: absolute;
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary);
+        }
+        .blog-filters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+        .blog-filter {
+            padding: 8px 20px;
+            border-radius: 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+        .blog-filter.active, .blog-filter:hover {
+            background: var(--primary);
+            color: #000;
+        }
+        .blog-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+        .blog-card:hover { transform: translateY(-10px); border-color: var(--primary); }
+        .blog-img { width: 100%; height: 220px; object-fit: cover; }
+        .blog-content { padding: 25px; }
+        .blog-meta {
+            display: flex;
+            gap: 15px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">FUEL<span>UP</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="home2.html">Home2</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="blog.html" class="active" style="color: var(--primary);">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-btns">
+                    <a href="cart.html" class="profile-btn" style="position: relative;">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                    <div class="profile-dropdown">
+                        <button class="profile-btn"><i class="fas fa-user"></i></button>
+                        <div class="dropdown-menu">
+                            <a href="login.html" class="dropdown-item"><i class="fas fa-sign-in-alt"></i> Login / Signup</a>
+                            <a href="admin.html" class="dropdown-item"><i class="fas fa-user-shield"></i> Admin Dashboard</a>
+                            <a href="dashboard.html" class="dropdown-item"><i class="fas fa-user-circle"></i> User Dashboard</a>
+                        </div>
+                    </div>
+                    <a href="dashboard.html" class="btn btn-primary tracker-btn" style="padding: 8px 20px;">Live Tracker</a>
+                    <button class="menu-toggle" aria-label="Toggle Menu"><i class="fas fa-bars"></i></button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Blog Header -->
+    <div class="blog-header">
+        <div class="container">
+            <h1 style="font-size: 3.5rem;" data-aos="fade-up">Kitchen <span class="text-gradient">Stories</span></h1>
+            <p style="color: var(--text-muted); margin-top: 15px;" data-aos="fade-up" data-aos-delay="100">Insights into gourmet cooking, healthy lifestyles, and the future of cloud dining.</p>
+            
+            <div class="search-bar" data-aos="fade-up" data-aos-delay="200">
+                <input type="text" placeholder="Search for recipes, tips, or stories...">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="container">
+        <div class="blog-filters" data-aos="fade-up">
+            <div class="blog-filter active" data-filter="all">All Stories</div>
+            <div class="blog-filter" data-filter="chef-tips">Chef Tips</div>
+            <div class="blog-filter" data-filter="healthy-eating">Healthy Eating</div>
+            <div class="blog-filter" data-filter="cloud-tech">Cloud Kitchen Tech</div>
+            <div class="blog-filter" data-filter="food-trends">Food Trends</div>
+        </div>
+
+        <!-- Blog Grid -->
+        <div class="blog-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-bottom: 100px;">
+            <div class="blog-card" data-category="chef-tips" data-aos="fade-up" data-aos-delay="0">
+                <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=600&q=80" class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="fas fa-calendar"></i> May 15, 2026</span>
+                        <span><i class="fas fa-user"></i> Chef Marcus</span>
+                    </div>
+                    <h4>The Art of Searing Wagyu: Tips from Our Executive Chef</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 15px;">Discover the secrets to achieving the perfect crust and maintaining the buttery texture of premium wagyu beef.</p>
+                    <a href="blog-details.html" style="color: var(--primary); display: inline-block; margin-top: 20px; font-weight: 600;">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="blog-card" data-category="chef-tips" data-aos="fade-up" data-aos-delay="100">
+                <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80" class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="fas fa-calendar"></i> May 05, 2026</span>
+                        <span><i class="fas fa-user"></i> Chef Sarah</span>
+                    </div>
+                    <h4>5 Essential Knives Every Home Chef Needs</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 15px;">Elevate your home cooking with these fundamental tools of the trade used by professional chefs.</p>
+                    <a href="blog-details.html" style="color: var(--primary); display: inline-block; margin-top: 20px; font-weight: 600;">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="blog-card" data-category="chef-tips" data-aos="fade-up" data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1581349485608-9469926a8e5e?auto=format&fit=crop&w=600&q=80" class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="fas fa-calendar"></i> Apr 28, 2026</span>
+                        <span><i class="fas fa-user"></i> Chef David</span>
+                    </div>
+                    <h4>Mastering the French Mother Sauces</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 15px;">A comprehensive guide to the five base sauces that form the foundation of classical cuisine.</p>
+                    <a href="blog-details.html" style="color: var(--primary); display: inline-block; margin-top: 20px; font-weight: 600;">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="blog-card" data-category="chef-tips" data-aos="fade-up" data-aos-delay="0">
+                <img src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?auto=format&fit=crop&w=600&q=80" class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="fas fa-calendar"></i> Apr 20, 2026</span>
+                        <span><i class="fas fa-user"></i> Chef Marcus</span>
+                    </div>
+                    <h4>Plating Like a Pro: Visual Composition</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 15px;">Learn how to transform a simple dish into a Michelin-worthy visual masterpiece using simple techniques.</p>
+                    <a href="blog-details.html" style="color: var(--primary); display: inline-block; margin-top: 20px; font-weight: 600;">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="blog-card" data-category="chef-tips" data-aos="fade-up" data-aos-delay="100">
+                <img src="https://images.unsplash.com/photo-1507048331197-7d4ac70811cf?auto=format&fit=crop&w=600&q=80" class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="fas fa-calendar"></i> Apr 12, 2026</span>
+                        <span><i class="fas fa-user"></i> Chef Sarah</span>
+                    </div>
+                    <h4>The Secret to Perfectly Caramelized Onions</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 15px;">Patience is key. We break down the science and methodology behind deep, rich caramelization.</p>
+                    <a href="blog-details.html" style="color: var(--primary); display: inline-block; margin-top: 20px; font-weight: 600;">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="blog-card" data-category="chef-tips" data-aos="fade-up" data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1628294895950-9805252327bc?auto=format&fit=crop&w=600&q=80" class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="fas fa-calendar"></i> Apr 05, 2026</span>
+                        <span><i class="fas fa-user"></i> Chef David</span>
+                    </div>
+                    <h4>Sous Vide for Beginners</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 15px;">Everything you need to know to start cooking with clinical precision in your own kitchen.</p>
+                    <a href="blog-details.html" style="color: var(--primary); display: inline-block; margin-top: 20px; font-weight: 600;">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="blog-card" data-category="healthy-eating" data-aos="fade-up" data-aos-delay="0">
+                <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=600&q=80" class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="fas fa-calendar"></i> May 12, 2026</span>
+                        <span><i class="fas fa-tag"></i> Healthy Eating</span>
+                    </div>
+                    <h4>Macro-Balancing: Why Your Lunch Choice Matters</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 15px;">How a balanced ratio of complex carbs and lean protein can prevent the dreaded afternoon slump.</p>
+                    <a href="blog-details.html" style="color: var(--primary); display: inline-block; margin-top: 20px; font-weight: 600;">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="blog-card" data-category="healthy-eating" data-aos="fade-up" data-aos-delay="100">
+                <img src="https://images.unsplash.com/photo-1543362906-acfc16c67564?auto=format&fit=crop&w=600&q=80" class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="fas fa-calendar"></i> May 02, 2026</span>
+                        <span><i class="fas fa-tag"></i> Nutrition</span>
+                    </div>
+                    <h4>Superfoods of 2026: What's Next in Nutrition?</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 15px;">From ancient grains to deep-sea kelp, discover the ingredients that are taking the wellness world by storm.</p>
+                    <a href="blog-details.html" style="color: var(--primary); display: inline-block; margin-top: 20px; font-weight: 600;">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="blog-card" data-category="healthy-eating" data-aos="fade-up" data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80" class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="fas fa-calendar"></i> Apr 25, 2026</span>
+                        <span><i class="fas fa-tag"></i> Wellness</span>
+                    </div>
+                    <h4>The Gut-Brain Connection in Modern Diets</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 15px;">Understanding how your daily food choices directly impact your mood and cognitive function.</p>
+                    <a href="blog-details.html" style="color: var(--primary); display: inline-block; margin-top: 20px; font-weight: 600;">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="blog-card" data-category="healthy-eating" data-aos="fade-up" data-aos-delay="0">
+                <img src="https://images.unsplash.com/photo-1494390248081-4e521a5940db?auto=format&fit=crop&w=600&q=80" class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="fas fa-calendar"></i> Apr 18, 2026</span>
+                        <span><i class="fas fa-tag"></i> Meal Prep</span>
+                    </div>
+                    <h4>High-Protein Plant-Based Alternatives</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 15px;">A breakdown of the most bioavailable plant proteins to fuel your workouts and recovery.</p>
+                    <a href="blog-details.html" style="color: var(--primary); display: inline-block; margin-top: 20px; font-weight: 600;">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="blog-card" data-category="healthy-eating" data-aos="fade-up" data-aos-delay="100">
+                <img src="https://images.unsplash.com/photo-1478144592103-25e218a04891?auto=format&fit=crop&w=600&q=80" class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="fas fa-calendar"></i> Apr 10, 2026</span>
+                        <span><i class="fas fa-tag"></i> Dietary Science</span>
+                    </div>
+                    <h4>Intermittent Fasting: Myths vs Reality</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 15px;">We dive into the latest clinical research on time-restricted eating and its metabolic benefits.</p>
+                    <a href="blog-details.html" style="color: var(--primary); display: inline-block; margin-top: 20px; font-weight: 600;">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="blog-card" data-category="healthy-eating" data-aos="fade-up" data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80" class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="fas fa-calendar"></i> Apr 01, 2026</span>
+                        <span><i class="fas fa-tag"></i> Healthy Habits</span>
+                    </div>
+                    <h4>Hydration Beyond Water</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 15px;">Exploring electrolyte balance and water-rich foods that keep you hydrated more efficiently than just drinking water.</p>
+                    <a href="blog-details.html" style="color: var(--primary); display: inline-block; margin-top: 20px; font-weight: 600;">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="blog-card" data-category="cloud-tech" data-aos="fade-up" data-aos-delay="0">
+                <img src="https://images.unsplash.com/photo-1581299894007-aaa50297cf16?auto=format&fit=crop&w=600&q=80" class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="fas fa-calendar"></i> May 10, 2026</span>
+                        <span><i class="fas fa-tag"></i> Future Food</span>
+                    </div>
+                    <h4>Inside the Cloud Kitchen: How AI Optimizes Delivery</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 15px;">A look behind the scenes at the predictive algorithms that ensure your food arrives hot and fresh.</p>
+                    <a href="blog-details.html" style="color: var(--primary); display: inline-block; margin-top: 20px; font-weight: 600;">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="blog-card" data-category="cloud-tech" data-aos="fade-up" data-aos-delay="100">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80" class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="fas fa-calendar"></i> May 01, 2026</span>
+                        <span><i class="fas fa-tag"></i> Automation</span>
+                    </div>
+                    <h4>The Role of Robotics in Prep Stations</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 15px;">How collaborative robots are assisting our chefs with repetitive tasks, ensuring perfect consistency.</p>
+                    <a href="blog-details.html" style="color: var(--primary); display: inline-block; margin-top: 20px; font-weight: 600;">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="blog-card" data-category="cloud-tech" data-aos="fade-up" data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="fas fa-calendar"></i> Apr 22, 2026</span>
+                        <span><i class="fas fa-tag"></i> Data Science</span>
+                    </div>
+                    <h4>Predicting Food Trends with Machine Learning</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 15px;">How we analyze millions of data points to develop new menu items before they even become popular.</p>
+                    <a href="blog-details.html" style="color: var(--primary); display: inline-block; margin-top: 20px; font-weight: 600;">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="blog-card" data-category="cloud-tech" data-aos="fade-up" data-aos-delay="0">
+                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80" class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="fas fa-calendar"></i> Apr 15, 2026</span>
+                        <span><i class="fas fa-tag"></i> Logistics</span>
+                    </div>
+                    <h4>Thermal Packaging 2.0: The End of Cold Fries</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 15px;">Our proprietary packaging technology uses phase-change materials to maintain exact temperatures.</p>
+                    <a href="blog-details.html" style="color: var(--primary); display: inline-block; margin-top: 20px; font-weight: 600;">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="blog-card" data-category="cloud-tech" data-aos="fade-up" data-aos-delay="100">
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80" class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="fas fa-calendar"></i> Apr 08, 2026</span>
+                        <span><i class="fas fa-tag"></i> Smart Infrastructure</span>
+                    </div>
+                    <h4>Building the Dark Kitchen of Tomorrow</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 15px;">The architectural innovations required to handle 500+ gourmet orders an hour seamlessly.</p>
+                    <a href="blog-details.html" style="color: var(--primary); display: inline-block; margin-top: 20px; font-weight: 600;">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="blog-card" data-category="cloud-tech" data-aos="fade-up" data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&w=600&q=80" class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="fas fa-calendar"></i> Mar 28, 2026</span>
+                        <span><i class="fas fa-tag"></i> Analytics</span>
+                    </div>
+                    <h4>Real-time Quality Control Monitoring</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 15px;">Implementing IoT sensors across all cooking stations to guarantee clinical food safety standards.</p>
+                    <a href="blog-details.html" style="color: var(--primary); display: inline-block; margin-top: 20px; font-weight: 600;">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="blog-card" data-category="food-trends" data-aos="fade-up" data-aos-delay="0">
+                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80" class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="fas fa-calendar"></i> May 08, 2026</span>
+                        <span><i class="fas fa-tag"></i> Industry Insights</span>
+                    </div>
+                    <h4>The Rise of Plant-Based Ghost Kitchens</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 15px;">Exploring the massive shift towards sustainability and how ghost kitchens are leading the vegan revolution.</p>
+                    <a href="blog-details.html" style="color: var(--primary); display: inline-block; margin-top: 20px; font-weight: 600;">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="blog-card" data-category="food-trends" data-aos="fade-up" data-aos-delay="100">
+                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=600&q=80" class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="fas fa-calendar"></i> Apr 29, 2026</span>
+                        <span><i class="fas fa-tag"></i> Global Cuisine</span>
+                    </div>
+                    <h4>Hyper-Regional Asian Street Food</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 15px;">Why consumers are moving past generic labels and seeking highly specific, authentic regional dishes.</p>
+                    <a href="blog-details.html" style="color: var(--primary); display: inline-block; margin-top: 20px; font-weight: 600;">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="blog-card" data-category="food-trends" data-aos="fade-up" data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1543352634-99a5d50ae78e?auto=format&fit=crop&w=600&q=80" class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="fas fa-calendar"></i> Apr 21, 2026</span>
+                        <span><i class="fas fa-tag"></i> Dining Habits</span>
+                    </div>
+                    <h4>The Micro-Dining Experience at Home</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 15px;">How the definition of a "restaurant quality meal" has evolved in the era of ultra-premium delivery.</p>
+                    <a href="blog-details.html" style="color: var(--primary); display: inline-block; margin-top: 20px; font-weight: 600;">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="blog-card" data-category="food-trends" data-aos="fade-up" data-aos-delay="0">
+                <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=600&q=80" class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="fas fa-calendar"></i> Apr 14, 2026</span>
+                        <span><i class="fas fa-tag"></i> Flavor Profiles</span>
+                    </div>
+                    <h4>Swicy: The Sweet & Spicy Flavor Taking Over</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 15px;">Analyzing the explosive popularity of hot honey, chili crisp, and complex sweet-heat combinations.</p>
+                    <a href="blog-details.html" style="color: var(--primary); display: inline-block; margin-top: 20px; font-weight: 600;">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="blog-card" data-category="food-trends" data-aos="fade-up" data-aos-delay="100">
+                <img src="https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?auto=format&fit=crop&w=600&q=80" class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="fas fa-calendar"></i> Apr 06, 2026</span>
+                        <span><i class="fas fa-tag"></i> Consumer Data</span>
+                    </div>
+                    <h4>Nostalgia as an Ingredient</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 15px;">Why modernized comfort foods from the 90s are driving record sales across delivery platforms.</p>
+                    <a href="blog-details.html" style="color: var(--primary); display: inline-block; margin-top: 20px; font-weight: 600;">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="blog-card" data-category="food-trends" data-aos="fade-up" data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=80" class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="fas fa-calendar"></i> Mar 30, 2026</span>
+                        <span><i class="fas fa-tag"></i> Sustainability</span>
+                    </div>
+                    <h4>Upcycled Ingredients in High-End Dining</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 15px;">How chefs are transforming food waste into premium, highly sought-after culinary experiences.</p>
+                    <a href="blog-details.html" style="color: var(--primary); display: inline-block; margin-top: 20px; font-weight: 600;">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Post -->
+    <section class="section-padding" style="background: var(--bg-surface);">
+        <div class="container">
+            <div class="glass" style="display: flex; align-items: center; gap: 50px; padding: 50px; border-radius: var(--radius-lg); flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 300px;">
+                    <span class="blog-filter" style="margin-bottom: 20px; display: inline-block; background: var(--primary); color: #000;">FEATURED POST</span>
+                    <h2>Sustainable Dining: Our Journey Towards Eco-Friendly Cloud Operations</h2>
+                    <p style="color: var(--text-muted); margin: 20px 0;">We explore how the cloud kitchen model is inherently more sustainable and our pledge to be plastic-free by 2027.</p>
+                    <a href="blog-details.html" class="btn btn-primary">Read Full Article</a>
+                </div>
+                <div style="flex: 1; min-width: 300px;">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80" style="width: 100%; border-radius: var(--radius-md);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="index.html" class="logo">FUEL<span>UP</span></a>
+                    <p class="footer-logo-desc">Redefining the dining experience with chef-crafted gourmet delivery. Fresh
+                        ingredients, lightning speed, clinical precision.</p>
+                    <div class="footer-socials">
+                        <a href="https://www.facebook.com" target="_blank""><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com" target="_blank""><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com" target="_blank""><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com" target="_blank""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-title">Explore</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="home2.html">Home2</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Subscribe</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">Get the latest menu updates
+                        and offers.</p>
+                    <form action="#" style="display: flex; gap: 10px;">
+                        <input type="email" placeholder="Email Address" required
+                            style="flex: 1; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-main);">
+                        <button class="btn btn-primary" style="padding: 12px 15px;"><i
+                                class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 FuelUp Kitchens. All Rights Reserved. Crafted for the future of dining.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        // Smooth blog filtering logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.blog-filter');
+            const blogCards = document.querySelectorAll('.blog-card');
+
+            // Setup initial transition state
+            blogCards.forEach(card => {
+                card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                card.style.opacity = '1';
+                card.style.transform = 'scale(1)';
+            });
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active state
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const filter = btn.getAttribute('data-filter');
+
+                    blogCards.forEach(card => {
+                        // Start fade out
+                        card.style.opacity = '0';
+                        card.style.transform = 'scale(0.95)';
+
+                        setTimeout(() => {
+                            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                                card.style.display = 'block';
+                                // Slight delay to ensure display: block is registered before fading in
+                                setTimeout(() => {
+                                    card.style.opacity = '1';
+                                    card.style.transform = 'scale(1)';
+                                }, 50);
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        }, 400); // Wait for transition to finish
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

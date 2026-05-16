@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FuelUp Kitchen | Gourmet Cloud Kitchen & Fast Delivery</title>
+    <meta name="description"
+        content="Premium cloud kitchen delivering chef-crafted meals, family combos, and healthy home-style food. Fresh ingredients, lightning-fast delivery.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .category-scroll {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 20px 0;
+            scrollbar-width: none;
+        }
+
+        .category-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .cat-item {
+            min-width: 150px;
+            text-align: center;
+            padding: 20px;
+            background: var(--bg-card);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .cat-item:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .cat-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .trending-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #ff4d4d;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.7rem;
+            font-weight: 800;
+        }
+
+        .review-card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .quote-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            opacity: 0.1;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav aria-label="Main Navigation">
+                <a href="index.html" class="logo" aria-label="FuelUp Home">FUEL<span>UP</span></a>
+                <ul class="nav-links" role="menubar">
+                    <li role="none"><a href="index.html" class="active" style="color: var(--primary);"
+                            role="menuitem">Home</a></li>
+                    <li role="none"><a href="home2.html" role="menuitem">Home2</a></li>
+                    <li role="none"><a href="about.html" role="menuitem">About Us</a></li>
+                    <li role="none"><a href="menu.html" role="menuitem">Menu</a></li>
+                    <li role="none"><a href="services.html" role="menuitem">Services</a></li>
+                    <li role="none"><a href="blog.html" role="menuitem">Blog</a></li>
+                    <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
+                </ul>
+                <div class="nav-btns">
+                    <a href="cart.html" class="profile-btn" style="position: relative;">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                    <div class="profile-dropdown">
+                        <button class="profile-btn" aria-label="User Profile"><i class="fas fa-user"></i></button>
+                        <div class="dropdown-menu">
+                            <a href="login.html" class="dropdown-item"><i class="fas fa-sign-in-alt"></i> Login /
+                                Signup</a>
+                            <a href="admin.html" class="dropdown-item"><i class="fas fa-user-shield"></i> Admin
+                                Dashboard</a>
+                            <a href="dashboard.html" class="dropdown-item"><i class="fas fa-user-circle"></i> User
+                                Dashboard</a>
+                        </div>
+                    </div>
+                    <a href="dashboard.html" class="btn btn-primary tracker-btn" style="padding: 8px 20px;">Live
+                        Tracker</a>
+                    <button class="menu-toggle" aria-label="Toggle Menu"><i class="fas fa-bars"></i></button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container" style="display: flex; align-items: center; gap: 50px; flex-wrap: wrap;">
+            <div class="hero-content" data-aos="fade-right">
+                <span
+                    style="color: var(--primary); font-weight: 600; letter-spacing: 2px; text-transform: uppercase;">Premium
+                    Cloud Kitchen</span>
+                <h1 class="hero-title">Gourmet Flavors <br><span class="text-gradient">Fast & Fresh</span></h1>
+                <p class="hero-desc">Experience chef-crafted culinary masterpieces delivered with lightning speed. From
+                    artisan burgers to healthy home-style bowls, we redefine the dining experience.</p>
+                <div class="hero-actions" style="display: flex; gap: 20px;">
+                    <a href="menu.html" class="btn btn-primary">View Full Menu</a>
+                    <a href="home2.html" class="btn btn-outline">Our Story</a>
+                </div>
+                <div class="hero-stats" style="display: flex; gap: 40px; margin-top: 50px;">
+                    <div>
+                        <h3 style="font-size: 2rem;">20k+</h3>
+                        <p style="color: var(--text-muted);">Orders/Mo</p>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 2rem;">25m</h3>
+                        <p style="color: var(--text-muted);">Avg Delivery</p>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 2rem;">4.9/5</h3>
+                        <p style="color: var(--text-muted);">Rating</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image" data-aos="fade-left">
+                <img src="assets/images/hero-meal.png" alt="Gourmet Food" class="hero-img-main"
+                    style="max-width: 100%; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));">
+                <div class="glass"
+                    style="position: absolute; bottom: 30px; left: -20px; padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--primary);">
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <div
+                            style="width: 12px; height: 12px; background: #4caf50; border-radius: 50%; box-shadow: 0 0 10px #4caf50;">
+                        </div>
+                        <span style="font-weight: 700;">Live Kitchen Tracking</span>
+                    </div>
+                    <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 5px;">Your order is being
+                        prepared by Chef Marcus</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="section-padding" style="padding-bottom: 0;">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Explore <span class="text-gradient">Categories</span></h2>
+            </div>
+            <div class="category-scroll" data-aos="fade-up" data-aos-delay="100">
+                <div class="cat-item"><i class="fas fa-hamburger cat-icon"></i><span>Burgers</span></div>
+                <div class="cat-item"><i class="fas fa-pizza-slice cat-icon"></i><span>Pizza</span></div>
+                <div class="cat-item"><i class="fas fa-seedling cat-icon"></i><span>Healthy Bowls</span></div>
+                <div class="cat-item"><i class="fas fa-coffee cat-icon"></i><span>Breakfast</span></div>
+                <div class="cat-item"><i class="fas fa-ice-cream cat-icon"></i><span>Desserts</span></div>
+                <div class="cat-item"><i class="fas fa-wine-glass-alt cat-icon"></i><span>Beverages</span></div>
+                <div class="cat-item"><i class="fas fa-box-open cat-icon"></i><span>Combos</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Trending <span class="text-gradient">Dishes</span></h2>
+                <p style="color: var(--text-muted);">The most loved items this week.</p>
+            </div>
+            <div class="meal-grid">
+                <div class="meal-card" data-aos="fade-up">
+                    <div class="trending-badge">TRENDING #1</div>
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80"
+                        class="meal-img">
+                    <div class="meal-info">
+                        <h3>Royal Truffle Burger</h3>
+                        <p style="color: var(--text-muted); font-size: 0.85rem; margin: 10px 0;">Double wagyu, truffle
+                            aioli, aged cheddar.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span class="price">$18.50</span>
+                            <button class="btn btn-primary" style="padding: 8px 15px; font-size: 0.8rem;"
+                                onclick="addToCart(1, 'Royal Truffle Burger', 18.50, 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80', 'Double wagyu, truffle aioli, aged cheddar')">Quick
+                                Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="meal-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="trending-badge">TRENDING #2</div>
+                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=80"
+                        class="meal-img">
+                    <div class="meal-info">
+                        <h3>Teriyaki Salmon Bowl</h3>
+                        <p style="color: var(--text-muted); font-size: 0.85rem; margin: 10px 0;">Fresh salmon, jasmine
+                            rice, edamame.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span class="price">$22.00</span>
+                            <button class="btn btn-primary" style="padding: 8px 15px; font-size: 0.8rem;"
+                                onclick="addToCart(2, 'Teriyaki Salmon Bowl', 22.00, 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=80', 'Fresh salmon, jasmine rice, edamame')">Quick
+                                Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="meal-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="trending-badge">TRENDING #3</div>
+                    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=80"
+                        class="meal-img">
+                    <div class="meal-info">
+                        <h3>Pesto Artisan Pizza</h3>
+                        <p style="color: var(--text-muted); font-size: 0.85rem; margin: 10px 0;">Sourdough, fresh basil,
+                            buffalo mozzarella.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span class="price">$16.99</span>
+                            <button class="btn btn-primary" style="padding: 8px 15px; font-size: 0.8rem;"
+                                onclick="addToCart(3, 'Pesto Artisan Pizza', 16.99, 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=80', 'Sourdough, fresh basil, buffalo mozzarella')">Quick
+                                Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prep Process Section -->
+    <section class="section-padding" style="background: var(--bg-surface);">
+        <div class="container">
+            <div style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
+                <div style="flex: 1;" data-aos="fade-right">
+                    <h2 style="font-size: 3rem;">Gourmet Quality <br><span class="text-gradient">In Every
+                            Container</span></h2>
+                    <p style="color: var(--text-muted); margin: 20px 0 40px;">Our cloud kitchens are designed for the
+                        modern foodie. We combine advanced food technology with traditional artisanal cooking
+                        techniques.</p>
+                    <div style="display: grid; gap: 30px;">
+                        <div style="display: flex; gap: 20px;">
+                            <i class="fas fa-microscope" style="font-size: 2rem; color: var(--primary);"></i>
+                            <div>
+                                <h4>Quality Lab Tested</h4>
+                                <p style="color: var(--text-muted); font-size: 0.9rem;">Every ingredient is checked for
+                                    freshness upon arrival.</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 20px;">
+                            <i class="fas fa-stopwatch" style="font-size: 2rem; color: var(--primary);"></i>
+                            <div>
+                                <h4>Real-Time Preparation</h4>
+                                <p style="color: var(--text-muted); font-size: 0.9rem;">Cooking only begins the moment
+                                    your order is confirmed.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="flex: 1;" data-aos="fade-left">
+                    <div style="max-width: 500px; margin: 0 auto;">
+                        <div class="img-square-wrapper">
+                            <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=80"
+                                alt="Gourmet Quality" class="premium-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Customer <span class="text-gradient">Wall of Fame</span></h2>
+            </div>
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px;">
+                <div class="review-card" data-aos="fade-up">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <div style="display: flex; gap: 15px; align-items: center; margin-bottom: 20px;">
+                        <img src="https://ui-avatars.com/api/?name=Sarah+J&background=ffcc00&color=000"
+                            style="width: 50px; height: 50px; border-radius: 50%;">
+                        <div>
+                            <h4 style="margin: 0;">Sarah Johnson</h4><span
+                                style="color: var(--primary); font-size: 0.8rem;">Verified Foodie</span>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-muted); font-style: italic;">"The truffle burger was life-changing. It
+                        arrived in 20 minutes and was still piping hot. Best delivery experience ever!"</p>
+                </div>
+                <div class="review-card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <div style="display: flex; gap: 15px; align-items: center; margin-bottom: 20px;">
+                        <img src="https://ui-avatars.com/api/?name=Michael+R&background=ffcc00&color=000"
+                            style="width: 50px; height: 50px; border-radius: 50%;">
+                        <div>
+                            <h4 style="margin: 0;">Michael Ross</h4><span
+                                style="color: var(--primary); font-size: 0.8rem;">Corporate Member</span>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-muted); font-style: italic;">"Our office ordering has never been
+                        smoother. The family combos are a massive hit during Friday team lunches."</p>
+                </div>
+                <div class="review-card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <div style="display: flex; gap: 15px; align-items: center; margin-bottom: 20px;">
+                        <img src="https://ui-avatars.com/api/?name=Elena+G&background=ffcc00&color=000"
+                            style="width: 50px; height: 50px; border-radius: 50%;">
+                        <div>
+                            <h4 style="margin: 0;">Elena Gomez</h4><span
+                                style="color: var(--primary); font-size: 0.8rem;">Regular Customer</span>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-muted); font-style: italic;">"As someone who values hygiene, seeing
+                        their transparent kitchen process gave me total peace of mind. And the food is 10/10."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Download -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="glass"
+                style="padding: 60px; border-radius: var(--radius-lg); display: flex; align-items: center; gap: 50px; flex-wrap: wrap;">
+                <div style="flex: 1.5; min-width: 300px;">
+                    <h2 style="font-size: 2.5rem;">The Kitchen in <span class="text-gradient">Your Pocket</span></h2>
+                    <p style="color: var(--text-muted); margin: 20px 0 30px;">Track your delivery in real-time, get
+                        exclusive app-only menu drops, and earn loyalty points with every bite.</p>
+                    <div style="display: flex; gap: 20px;">
+                        <a href="#" class="btn btn-primary"><i class="fab fa-apple"></i> iOS App</a>
+                        <a href="#" class="btn btn-outline"><i class="fab fa-google-play"></i> Android</a>
+                    </div>
+                </div>
+                <div style="flex: 1; min-width: 250px; text-align: center;">
+                    <i class="fas fa-mobile-alt"
+                        style="font-size: 10rem; color: var(--primary); filter: drop-shadow(0 0 20px var(--primary));"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="index.html" class="logo">FUEL<span>UP</span></a>
+                    <p class="footer-logo-desc">Redefining the dining experience with chef-crafted gourmet delivery.
+                        Fresh
+                        ingredients, lightning speed, clinical precision.</p>
+                    <div class="footer-socials">
+                        <a href="https://www.facebook.com" target="_blank""><i class=" fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com" target="_blank""><i class=" fab fa-instagram"></i></a>
+                        <a href="https://twitter.com" target="_blank""><i class=" fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com" target="_blank""><i class=" fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-title">Explore</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="home2.html">Home2</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Subscribe</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">Get the latest menu
+                        updates
+                        and offers.</p>
+                    <form action="#" style="display: flex; gap: 10px;">
+                        <input type="email" placeholder="Email Address" required
+                            style="flex: 1; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-main);">
+                        <button class="btn btn-primary" style="padding: 12px 15px;"><i
+                                class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 FuelUp Kitchens. All Rights Reserved. Crafted for the future of dining.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

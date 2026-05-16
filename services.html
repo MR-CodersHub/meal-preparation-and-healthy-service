@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | FuelUp Gourmet Solutions</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .service-card {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .service-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 204, 0, 0.1);
+            color: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">FUEL<span>UP</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="home2.html">Home2</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="services.html" class="active" style="color: var(--primary);">Services</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-btns">
+                    <a href="cart.html" class="profile-btn" style="position: relative;">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                    <div class="profile-dropdown">
+                        <button class="profile-btn"><i class="fas fa-user"></i></button>
+                        <div class="dropdown-menu">
+                            <a href="login.html" class="dropdown-item"><i class="fas fa-sign-in-alt"></i> Login / Signup</a>
+                            <a href="admin.html" class="dropdown-item"><i class="fas fa-user-shield"></i> Admin Dashboard</a>
+                            <a href="dashboard.html" class="dropdown-item"><i class="fas fa-user-circle"></i> User Dashboard</a>
+                        </div>
+                    </div>
+                    <a href="dashboard.html" class="btn btn-primary tracker-btn" style="padding: 8px 20px;">Live Tracker</a>
+                    <button class="menu-toggle" aria-label="Toggle Menu"><i class="fas fa-bars"></i></button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Services Hero -->
+    <section class="section-padding" style="margin-top: 80px; text-align: center;">
+        <div class="container">
+            <div data-aos="fade-up">
+                <span style="color: var(--primary); font-weight: 700; text-transform: uppercase;">Comprehensive Dining Solutions</span>
+                <h1 style="font-size: 3.5rem; margin: 20px 0;">Fueling Your <br><span class="text-gradient">Every Culinary Need</span></h1>
+                <p style="max-width: 700px; margin: 0 auto; color: var(--text-muted);">From daily meals to grand events, our cloud kitchen network is designed to deliver excellence at scale.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="section-padding" style="padding-top: 0;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
+                <!-- Service 1 -->
+                <div class="service-card" data-aos="fade-up">
+                    <div class="service-icon"><i class="fas fa-motorcycle"></i></div>
+                    <h3>Gourmet On-Demand</h3>
+                    <p style="color: var(--text-muted); line-height: 1.6;">Lightning-fast delivery of artisan burgers, pizzas, and snacks in under 25 minutes. Freshly prepared upon order.</p>
+                    <a href="menu.html" class="btn btn-outline" style="align-self: flex-start; padding: 8px 20px;">Order Now</a>
+                </div>
+                <!-- Service 2 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon"><i class="fas fa-heartbeat"></i></div>
+                    <h3>Healthy Meal Plans</h3>
+                    <p style="color: var(--text-muted); line-height: 1.6;">Subscription-based healthy home-style meals tailored to your nutritional needs. Lunch & Dinner delivered daily.</p>
+                    <a href="register.html" class="btn btn-outline" style="align-self: flex-start; padding: 8px 20px;">View Plans</a>
+                </div>
+                <!-- Service 3 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon"><i class="fas fa-users"></i></div>
+                    <h3>Family Combo Packs</h3>
+                    <p style="color: var(--text-muted); line-height: 1.6;">Curated multi-dish feasting boxes designed to satisfy the whole family. Great value, gourmet quality.</p>
+                    <a href="home2.html" class="btn btn-outline" style="align-self: flex-start; padding: 8px 20px;">View Combos</a>
+                </div>
+                <!-- Service 4 -->
+                <div class="service-card" data-aos="fade-up">
+                    <div class="service-icon"><i class="fas fa-briefcase"></i></div>
+                    <h3>Corporate Catering</h3>
+                    <p style="color: var(--text-muted); line-height: 1.6;">Scaleable food solutions for office lunches, meetings, and team celebrations. Reliable and professional.</p>
+                    <a href="contact.html" class="btn btn-outline" style="align-self: flex-start; padding: 8px 20px;">Get Quote</a>
+                </div>
+                <!-- Service 5 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon"><i class="fas fa-glass-cheers"></i></div>
+                    <h3>Event & Party Orders</h3>
+                    <p style="color: var(--text-muted); line-height: 1.6;">Customizable menus for parties, birthdays, and weddings. We handle the gourmet food, you handle the fun.</p>
+                    <a href="contact.html" class="btn btn-outline" style="align-self: flex-start; padding: 8px 20px;">Inquire Now</a>
+                </div>
+                <!-- Service 6 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon"><i class="fas fa-shipping-fast"></i></div>
+                    <h3>Express Partner Path</h3>
+                    <p style="color: var(--text-muted); line-height: 1.6;">Priority VIP delivery path for our registered members, ensuring your food is always the first out of the kitchen.</p>
+                    <a href="register.html" class="btn btn-outline" style="align-self: flex-start; padding: 8px 20px;">Join Elite</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Banner -->
+    <section class="section-padding" style="background: var(--bg-surface);">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: center;">
+                <div data-aos="zoom-in">
+                    <i class="fas fa-shield-virus" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 20px;"></i>
+                    <h4>Hygiene Platinum</h4>
+                    <p style="color: var(--text-muted); font-size: 0.85rem;">Strict 5-stage sanitation protocols.</p>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fas fa-box" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 20px;"></i>
+                    <h4>Eco-Insulated</h4>
+                    <p style="color: var(--text-muted); font-size: 0.85rem;">Keeps food hot for up to 90 minutes.</p>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fas fa-leaf" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 20px;"></i>
+                    <h4>100% Organic</h4>
+                    <p style="color: var(--text-muted); font-size: 0.85rem;">Locally sourced fresh ingredients.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="index.html" class="logo">FUEL<span>UP</span></a>
+                    <p class="footer-logo-desc">Redefining the dining experience with chef-crafted gourmet delivery. Fresh
+                        ingredients, lightning speed, clinical precision.</p>
+                    <div class="footer-socials">
+                        <a href="https://www.facebook.com" target="_blank""><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com" target="_blank""><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com" target="_blank""><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com" target="_blank""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-title">Explore</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="home2.html">Home2</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Subscribe</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">Get the latest menu updates
+                        and offers.</p>
+                    <form action="#" style="display: flex; gap: 10px;">
+                        <input type="email" placeholder="Email Address" required
+                            style="flex: 1; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-main);">
+                        <button class="btn btn-primary" style="padding: 12px 15px;"><i
+                                class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 FuelUp Kitchens. All Rights Reserved. Crafted for the future of dining.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

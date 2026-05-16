@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | FuelUp</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .auth-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+        }
+        .auth-card {
+            background: var(--bg-card);
+            padding: 50px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+        }
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            background: rgba(255,255,255,0.03);
+            color: #fff;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .social-btn:hover { background: rgba(255,255,255,0.08); }
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 30px 0;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+        .divider::before, .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <a href="index.html" class="logo" style="display: inline-block; font-size: 2rem; margin-bottom: 15px;">FUEL<span>UP</span></a>
+                <h2 style="font-size: 1.5rem;">Welcome Back</h2>
+                <p style="color: var(--text-muted); margin-top: 10px;">Please enter your details</p>
+            </div>
+
+            <div class="social-btns">
+                <div class="social-btn"><i class="fab fa-google"></i> Continue with Google</div>
+                <div class="social-btn"><i class="fab fa-apple"></i> Continue with Apple</div>
+            </div>
+
+            <div class="divider">OR LOGIN WITH EMAIL</div>
+
+            <form action="dashboard.html">
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-size: 0.9rem; color: var(--text-muted);">Email Address</label>
+                    <input type="email" placeholder="name@company.com" style="width: 100%; background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); padding: 14px; border-radius: 10px; color: #fff;" required>
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label style="display: block; margin-bottom: 8px; font-size: 0.9rem; color: var(--text-muted);">Password</label>
+                    <div style="position: relative;">
+                        <input type="password" id="password" placeholder="••••••••" style="width: 100%; background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); padding: 14px; border-radius: 10px; color: #fff;" required>
+                        <i class="far fa-eye" id="togglePassword" style="position: absolute; right: 15px; top: 18px; color: var(--text-muted); cursor: pointer;"></i>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; font-size: 0.85rem;">
+                    <label style="display: flex; align-items: center; gap: 8px; color: var(--text-muted); cursor: pointer;">
+                        <input type="checkbox" style="accent-color: var(--primary);"> Remember me
+                    </label>
+                    <a href="#" onclick="alert('A password reset link has been sent to your registered email address.'); return false;" style="color: var(--primary);">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px;">Sign In</button>
+            </form>
+
+            <p style="text-align: center; margin-top: 30px; color: var(--text-muted); font-size: 0.9rem;">
+                Don't have an account? <a href="register.html" style="color: var(--primary); font-weight: 700;">Sign Up</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const togglePassword = document.querySelector('#togglePassword');
+        const password = document.querySelector('#password');
+
+        togglePassword.addEventListener('click', function (e) {
+            // Toggle the type attribute
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            // Toggle the eye / eye slash icon
+            this.classList.toggle('fa-eye');
+            this.classList.toggle('fa-eye-slash');
+        });
+    </script>
+</body>
+</html>

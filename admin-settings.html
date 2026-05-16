@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Settings | Admin Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar-overlay"></div>
+    <div class="dashboard-wrapper">
+        <div class="sidebar">
+            <a href="index.html" class="logo">FUEL<span>UP</span></a>
+            <nav class="sidebar-nav" style="height: calc(100% - 100px); display: flex; flex-direction: column;">
+                <div style="flex: 1;">
+                    <a href="admin.html" class="nav-item"><i class="fas fa-th-large"></i> Overview</a>
+                    <a href="admin-revenue.html" class="nav-item"><i class="fas fa-chart-line"></i> Revenue Analytics</a>
+                    <a href="admin-users.html" class="nav-item"><i class="fas fa-users"></i> User Management</a>
+                    <a href="admin-content.html" class="nav-item"><i class="fas fa-file-alt"></i> Content Management</a>
+                    <a href="admin-orders.html" class="nav-item"><i class="fas fa-shopping-basket"></i> Orders Management</a>
+                    <a href="admin-tracking.html" class="nav-item"><i class="fas fa-truck"></i> Delivery Tracking</a>
+                    <a href="admin-notifications.html" class="nav-item"><i class="fas fa-bell"></i> Notifications</a>
+                    <a href="admin-settings.html" class="nav-item active"><i class="fas fa-cog"></i> Settings</a>
+                </div>
+                <a href="index.html" class="nav-item" style="margin-top: auto; color: #ff4d4d;"><i class="fas fa-sign-out-alt"></i> Back to Site</a>
+            </nav>
+        </div>
+
+        <div class="main-content">
+            <div class="mobile-dash-header" style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                    <button class="dash-toggle" aria-label="Toggle Sidebar" style="background: none; border: none; outline: none;">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 style="font-size: clamp(1.2rem, 5vw, 2.5rem); margin: 0;">Global <span class="text-gradient">Settings</span></h1>
+                </div>
+            <div class="dash-card" style="margin-top: 40px; max-width: 800px;">
+                <div style="display: grid; gap: 40px;">
+                    <div>
+                        <h4 style="margin-bottom: 20px;">System Configuration</h4>
+                        <div style="display: grid; gap: 20px;">
+                            <label style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>Maintenance Mode</span>
+                                <input type="checkbox" style="width: 40px; height: 20px; accent-color: var(--primary);">
+                            </label>
+                            <label style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>Automated AI Dispatch</span>
+                                <input type="checkbox" checked style="width: 40px; height: 20px; accent-color: var(--primary);">
+                            </label>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 style="margin-bottom: 20px;">Platform Branding</h4>
+                        <div style="display: grid; gap: 15px;">
+                            <label>Site Title</label>
+                            <input type="text" value="FuelUp Gourmet Cloud Kitchen" class="glass" style="width: 100%; padding: 12px; border-radius: 8px; background: var(--bg-surface); color: #fff; border: 1px solid var(--border-color);">
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" style="justify-self: flex-start;">Update Settings</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>

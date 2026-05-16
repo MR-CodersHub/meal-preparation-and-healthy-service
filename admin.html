@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | FuelUp Kitchen</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar-overlay"></div>
+    <div class="dashboard-wrapper">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <a href="index.html" class="logo">FUEL<span>UP</span></a>
+            <nav class="sidebar-nav" style="height: calc(100% - 100px); display: flex; flex-direction: column;">
+                <div style="flex: 1;">
+                    <a href="admin.html" class="nav-item active"><i class="fas fa-th-large"></i> Overview</a>
+                    <a href="admin-revenue.html" class="nav-item"><i class="fas fa-chart-line"></i> Revenue Analytics</a>
+                    <a href="admin-users.html" class="nav-item"><i class="fas fa-users"></i> User Management</a>
+                    <a href="admin-content.html" class="nav-item"><i class="fas fa-file-alt"></i> Content Management</a>
+                    <a href="admin-orders.html" class="nav-item"><i class="fas fa-shopping-basket"></i> Orders Management</a>
+                    <a href="admin-tracking.html" class="nav-item"><i class="fas fa-truck"></i> Delivery Tracking</a>
+                    <a href="admin-notifications.html" class="nav-item"><i class="fas fa-bell"></i> Notifications</a>
+                    <a href="admin-settings.html" class="nav-item"><i class="fas fa-cog"></i> Settings</a>
+                </div>
+                <a href="index.html" class="nav-item" style="margin-top: auto; color: #ff4d4d;"><i class="fas fa-sign-out-alt"></i> Back to Site</a>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="mobile-dash-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; gap: 15px;">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <button class="dash-toggle" aria-label="Toggle Sidebar" style="background: none; border: none; outline: none;">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 style="font-size: clamp(1.2rem, 5vw, 2.5rem); margin: 0;">Admin <span class="text-gradient">Overview</span></h1>
+                </div>
+                <div style="display: flex; gap: 15px; align-items: center;">
+                    <div class="glass date-badge" style="padding: 8px 15px; border-radius: 30px; font-size: 0.8rem; display: flex; align-items: center; gap: 8px;">
+                        <i class="fas fa-calendar-alt"></i> May 15, 2026
+                    </div>
+                    <img src="https://ui-avatars.com/api/?name=Admin&background=ffcc00&color=000" style="width: 45px; border-radius: 50%;">
+                </div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 25px; margin-bottom: 40px;">
+                <div class="dash-card">
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Total Revenue</p>
+                    <h2 style="font-size: 2rem; margin: 10px 0;">$128,450</h2>
+                    <span style="color: #4caf50; font-size: 0.8rem;"><i class="fas fa-arrow-up"></i> 12.5% from last month</span>
+                </div>
+                <div class="dash-card">
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Active Orders</p>
+                    <h2 style="font-size: 2rem; margin: 10px 0;">1,240</h2>
+                    <span style="color: #4caf50; font-size: 0.8rem;"><i class="fas fa-arrow-up"></i> 8.2% from last week</span>
+                </div>
+                <div class="dash-card">
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">New Users</p>
+                    <h2 style="font-size: 2rem; margin: 10px 0;">458</h2>
+                    <span style="color: var(--primary); font-size: 0.8rem;"><i class="fas fa-minus"></i> Stable</span>
+                </div>
+                <div class="dash-card">
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Avg Delivery Time</p>
+                    <h2 style="font-size: 2rem; margin: 10px 0;">24m 15s</h2>
+                    <span style="color: #4caf50; font-size: 0.8rem;"><i class="fas fa-arrow-down"></i> 2m faster than avg</span>
+                </div>
+            </div>
+
+            <!-- Recent Orders Table -->
+            <div class="dash-card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+                    <h3>Recent Orders Management</h3>
+                    <button class="btn btn-outline" style="padding: 8px 15px; font-size: 0.8rem;">View All</button>
+                </div>
+                <table class="dash-table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Menu Item</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#FL-9082</td>
+                            <td>Sarah Johnson</td>
+                            <td>Royal Truffle Burger</td>
+                            <td>$18.50</td>
+                            <td><span style="background: rgba(76, 175, 80, 0.1); color: #4caf50; padding: 5px 10px; border-radius: 5px; font-size: 0.75rem;">Delivered</span></td>
+                            <td><i class="fas fa-ellipsis-h" style="cursor: pointer;"></i></td>
+                        </tr>
+                        <tr>
+                            <td>#FL-9083</td>
+                            <td>Michael Ross</td>
+                            <td>Family Combo Pack A</td>
+                            <td>$55.00</td>
+                            <td><span style="background: rgba(255, 204, 0, 0.1); color: var(--primary); padding: 5px 10px; border-radius: 5px; font-size: 0.75rem;">Preparing</span></td>
+                            <td><i class="fas fa-ellipsis-h" style="cursor: pointer;"></i></td>
+                        </tr>
+                        <tr>
+                            <td>#FL-9084</td>
+                            <td>Elena Gomez</td>
+                            <td>Teriyaki Salmon Bowl</td>
+                            <td>$22.00</td>
+                            <td><span style="background: rgba(33, 150, 243, 0.1); color: #2196f3; padding: 5px 10px; border-radius: 5px; font-size: 0.75rem;">On Way</span></td>
+                            <td><i class="fas fa-ellipsis-h" style="cursor: pointer;"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -14,6 +14,7 @@
             background: linear-gradient(var(--hero-overlay), var(--hero-overlay)), url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
+            transition: var(--transition);
         }
         .filter-container {
             position: sticky;
@@ -21,16 +22,20 @@
             z-index: 100;
             background: var(--sticky-nav-bg);
             backdrop-filter: blur(10px);
-            padding: 20px 0;
+            padding: 15px 0;
             border-bottom: 1px solid var(--border-color);
-            margin-bottom: 50px;
+            margin-bottom: 20px;
         }
         .filter-tabs {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             gap: 10px;
             overflow-x: auto;
-            padding-bottom: 10px;
+            padding: 5px 15px 10px;
+            scrollbar-width: none; /* Hide scrollbar for Firefox */
+        }
+        .filter-tabs::-webkit-scrollbar {
+            display: none; /* Hide scrollbar for Chrome/Safari */
         }
         .filter-btn {
             padding: 10px 20px;
@@ -50,7 +55,7 @@
             border-color: var(--primary);
         }
         .menu-section-title {
-            margin: 60px 0 30px;
+            margin: 40px 0 20px;
             display: flex;
             align-items: center;
             gap: 20px;
@@ -71,14 +76,43 @@
             font-weight: 800;
             z-index: 10;
         }
+
+        /* Responsive Optimization (Avoid Blank Space & Align Tabs) */
+        @media (min-width: 992px) {
+            .filter-tabs {
+                justify-content: center;
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-page-header {
+                padding: 80px 0 40px;
+            }
+            .filter-container {
+                top: 60px; /* Align with mobile header */
+                padding: 10px 0;
+                margin-bottom: 15px;
+            }
+            .menu-section-title {
+                margin: 25px 0 15px;
+            }
+            /* Override the global !important section padding to avoid massive top gap */
+            section.section-padding {
+                padding-top: 0 !important;
+                padding-bottom: 40px !important;
+            }
+        }
     </style>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
 </head>
 <body>
     <!-- Header -->
     <header id="header">
         <div class="container">
             <nav>
-                <a href="index.html" class="logo">FUEL<span>UP</span></a>
+                <a href="index.html" class="logo"><img src="assets/images/logo.png" alt="FuelUp Logo" class="logo-img">FUEL<span>UP</span></a>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="home2.html">Home2</a></li>
@@ -325,7 +359,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <a href="index.html" class="logo">FUEL<span>UP</span></a>
+                    <a href="index.html" class="logo"><img src="assets/images/logo.png" alt="FuelUp Logo" class="logo-img">FUEL<span>UP</span></a>
                     <p class="footer-logo-desc">Redefining the dining experience with chef-crafted gourmet delivery. Fresh
                         ingredients, lightning speed, clinical precision.</p>
                     <div class="footer-socials">

@@ -518,9 +518,6 @@ nav {
     .menu-toggle {
         display: block;
     }
-    .dash-toggle {
-        display: block !important;
-    }
     .sidebar { 
         transform: translateX(-100%); 
         z-index: 2000;
@@ -533,48 +530,74 @@ nav {
         width: 100%;
         overflow-x: hidden;
     }
-    .mobile-dash-header {
-        padding-left: 50px;
+    .dashboard-wrapper .mobile-dash-header {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding-left: 0 !important;
+        margin-bottom: 25px !important;
+        width: 100% !important;
+        gap: 15px !important;
     }
-    .mobile-dash-header h1 {
-        margin-left: 0 !important;
+    .dashboard-wrapper .mobile-dash-header > div:first-child {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 12px !important;
+        flex: 1 !important;
+        min-width: 0 !important;
+    }
+    .dashboard-wrapper .mobile-dash-header > div:last-child {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 12px !important;
+        flex: 0 0 auto !important;
+    }
+    .dashboard-wrapper .mobile-dash-header h1 {
+        font-size: clamp(1.25rem, 4vw, 1.8rem) !important;
+        margin: 0 !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+    }
+    .dash-toggle {
+        display: flex !important;
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        width: 42px !important;
+        height: 42px !important;
+        background: var(--bg-card) !important;
+        border: 1px solid var(--border-color) !important;
+        border-radius: 10px !important;
+        align-items: center !important;
+        justify-content: center !important;
+        cursor: pointer !important;
+        color: var(--primary) !important;
+        z-index: 100 !important;
+        transition: var(--transition) !important;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2) !important;
+        flex-shrink: 0 !important;
+    }
+    .dash-toggle:hover {
+        border-color: var(--primary) !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 6px 15px var(--accent-glow) !important;
     }
     @media (max-width: 480px) {
-        .mobile-dash-header {
-            padding-left: 45px;
-        }
         .dash-toggle {
-            top: 10px;
-            left: 10px;
-            width: 40px;
-            height: 40px;
+            width: 38px !important;
+            height: 38px !important;
+            border-radius: 8px !important;
+        }
+        .dashboard-wrapper .mobile-dash-header h1 {
+            font-size: 1.2rem !important;
         }
     }
     .sidebar.active { transform: translateX(0); }
-    
-    .dash-toggle {
-        display: flex !important;
-        position: fixed;
-        top: 15px;
-        left: 15px;
-        width: 45px;
-        height: 45px;
-        background: var(--bg-card);
-        border: 1px solid var(--border-color);
-        border-radius: 12px;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        color: var(--primary);
-        z-index: 2100;
-        transition: var(--transition);
-        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    }
-
-    .dash-toggle:hover {
-        border-color: var(--primary);
-        transform: scale(1.05);
-    }
 
     .sidebar-overlay {
         position: fixed;
@@ -783,6 +806,11 @@ nav {
     margin-bottom: 10px;
     font-weight: 600;
     font-size: 0.9rem;
+}
+
+select option {
+    background-color: var(--bg-card) !important;
+    color: var(--text-main) !important;
 }
 
 .form-input {
@@ -1251,6 +1279,12 @@ nav {
         flex-direction: column !important;
         justify-content: space-between !important;
         height: 100% !important;
+    }
+    .meal-grid .meal-card:last-child:nth-child(odd) {
+        grid-column: span 2 !important;
+        justify-self: center !important;
+        width: 100% !important;
+        max-width: calc(50% - 6px) !important;
     }
     .meal-img {
         height: 100px !important;

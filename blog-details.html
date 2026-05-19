@@ -3,12 +3,277 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Art of Searing Wagyu | FuelUp Blog</title>
-    <meta name="description" content="Discover the secrets to achieving the perfect crust and maintaining the buttery texture of premium wagyu beef, from our executive chef.">
+    <title>FuelUp Blog Stories</title>
+    <meta name="description" content="Insights into gourmet cooking, healthy lifestyles, and the future of cloud dining.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    
+    <!-- Google Fonts for Layout Personalities -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        /* Core Accent CSS Variables */
+        :root {
+            --accent-color: var(--primary);
+            --accent-rgb: 255, 204, 0;
+        }
+
+        /* Common details styling */
+        .details-container {
+            max-width: 860px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.85;
+            color: var(--text-muted);
+        }
+
+        .details-container p {
+            margin-bottom: 25px;
+        }
+
+        /* 1. Tutorial Layout Style (Chef Tips) */
+        .layout-tutorial {
+            font-family: 'Outfit', sans-serif;
+        }
+        .layout-tutorial h2 {
+            color: var(--text-main);
+            margin: 45px 0 20px;
+            font-size: 1.9rem;
+            font-weight: 700;
+        }
+        .layout-tutorial .tutorial-step-card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            display: flex;
+            gap: 25px;
+            margin-bottom: 25px;
+            align-items: flex-start;
+            transition: var(--transition);
+        }
+        .layout-tutorial .tutorial-step-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+        .layout-tutorial .step-num {
+            font-size: 2.2rem;
+            font-weight: 900;
+            line-height: 1;
+            color: var(--accent-color);
+            background: rgba(var(--accent-rgb), 0.1);
+            padding: 8px 16px;
+            border-radius: 10px;
+        }
+        .layout-tutorial .article-quote {
+            border-left: 5px solid var(--accent-color);
+            background: var(--bg-card);
+            padding: 30px 40px;
+            border-radius: var(--radius-md);
+            margin: 45px 0;
+        }
+
+        /* 2. Elegant Layout Style (Healthy Eating) */
+        .layout-elegant {
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+        .layout-elegant h1, .layout-elegant h2, .layout-elegant h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            color: var(--text-main);
+            margin: 45px 0 20px;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+        .layout-elegant h2 {
+            font-size: 2.1rem;
+        }
+        .layout-elegant p {
+            font-size: 1.15rem;
+            line-height: 1.9;
+        }
+        .layout-elegant .article-quote {
+            text-align: center;
+            border-left: none;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 40px 20px;
+            margin: 50px 0;
+            font-style: italic;
+        }
+        .layout-elegant .article-quote p {
+            font-size: 1.3rem;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+        .layout-elegant .elegant-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 40px 0;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+        }
+        .layout-elegant .elegant-table th {
+            background: rgba(var(--accent-rgb), 0.08);
+            color: var(--text-main);
+            text-align: left;
+            padding: 15px 20px;
+            font-weight: 600;
+            border-bottom: 2px solid var(--accent-color);
+        }
+        .layout-elegant .elegant-table td {
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-muted);
+        }
+
+        /* 3. Futuristic Layout Style (Cloud Kitchen Tech) */
+        .layout-futuristic {
+            font-family: 'Outfit', sans-serif;
+        }
+        .layout-futuristic h2 {
+            font-family: 'Outfit', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-main);
+            font-size: 1.6rem;
+            margin: 50px 0 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .layout-futuristic h2::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: var(--accent-color);
+            box-shadow: 0 0 10px var(--accent-color);
+            border-radius: 50%;
+        }
+        .layout-futuristic .article-quote {
+            background: rgba(10, 10, 15, 0.7);
+            border: 1px solid rgba(var(--accent-rgb), 0.3) !important;
+            box-shadow: 0 0 20px rgba(var(--accent-rgb), 0.1) !important;
+            padding: 35px;
+            border-radius: var(--radius-md);
+            margin: 45px 0;
+            position: relative;
+        }
+        .layout-futuristic .article-quote::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+        }
+        .layout-futuristic .cyber-list-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-left: 3px solid var(--accent-color);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* 4. Creative Layout Style (Food Trends) */
+        .layout-creative {
+            font-family: 'Outfit', sans-serif;
+        }
+        .layout-creative h2 {
+            font-size: 2.1rem;
+            font-weight: 800;
+            color: var(--text-main);
+            margin: 45px 0 25px;
+            position: relative;
+            display: inline-block;
+            z-index: 1;
+        }
+        .layout-creative h2::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: var(--accent-color);
+            opacity: 0.3;
+            z-index: -1;
+            border-radius: 4px;
+        }
+        .layout-creative .article-quote {
+            background: linear-gradient(135deg, rgba(var(--accent-rgb), 0.1) 0%, rgba(var(--accent-rgb), 0.02) 100%);
+            border: 1px dashed var(--accent-color);
+            padding: 35px 40px;
+            border-radius: var(--radius-lg);
+            margin: 45px 0;
+            transform: rotate(-0.5deg);
+        }
+        .layout-creative .creative-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 30px;
+            margin-bottom: 25px;
+            transition: var(--transition);
+        }
+        .layout-creative .creative-card:hover {
+            transform: translateY(-3px) scale(1.01);
+            box-shadow: var(--shadow);
+            border-color: var(--accent-color);
+        }
+
+        /* Related posts styling */
+        .related-section {
+            border-top: 1px solid var(--border-color);
+            padding: 80px 0;
+            background: var(--bg-surface);
+        }
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        /* Custom Dynamic CTA Card */
+        .dynamic-cta-card {
+            margin-top: 60px;
+            padding: 50px;
+            border-radius: var(--radius-lg);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+            border: 1px solid rgba(var(--accent-rgb), 0.25);
+            background: linear-gradient(135deg, rgba(var(--accent-rgb), 0.1) 0%, rgba(0,0,0,0.6) 100%);
+        }
+        .cta-content {
+            flex: 1.5;
+            min-width: 280px;
+        }
+        .cta-action {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            min-width: 200px;
+        }
+        @media (max-width: 768px) {
+            .cta-action {
+                justify-content: flex-start;
+            }
+            .dynamic-cta-card {
+                padding: 35px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -24,7 +289,7 @@
                     <li><a href="services.html">Services</a></li>
                     <li><a href="blog.html" class="active" style="color: var(--primary);">Blog</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                                    <li class="mobile-only-link"><a href="dashboard.html" style="color: var(--primary); font-weight: 700;"><i class="fas fa-bullseye" style="margin-right: 8px;"></i>Live Tracker</a></li>
+                    <li class="mobile-only-link"><a href="dashboard.html" style="color: var(--primary); font-weight: 700;"><i class="fas fa-bullseye" style="margin-right: 8px;"></i>Live Tracker</a></li>
                 </ul>
                 <div class="nav-btns">
                     <a href="cart.html" class="profile-btn" style="position: relative;">
@@ -47,76 +312,37 @@
     </header>
 
     <!-- Blog Post Hero -->
-    <div style="margin-top: 80px; position: relative; height: 450px; overflow: hidden;">
-        <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1600&q=80" 
-             alt="Chef Searing Wagyu" 
-             style="width: 100%; height: 100%; object-fit: cover;">
-        <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.85));"></div>
-        <div class="container" style="position: absolute; bottom: 60px; left: 50%; transform: translateX(-50%); width: 100%; max-width: 900px;">
+    <div id="dynamic-hero" style="margin-top: 80px; position: relative; min-height: 420px; display: flex; align-items: flex-end; padding: 60px 0; overflow: hidden; background: #000; color: #ffffff;">
+        <img id="hero-bg-img" src="" alt="Hero Image" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
+        <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.9)); z-index: 2;"></div>
+        <div class="container" style="position: relative; z-index: 3; width: 100%; max-width: 900px; color: #ffffff;">
             <div data-aos="fade-up">
-                <span style="background: var(--primary); color: #000; padding: 6px 16px; border-radius: 20px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">Chef Tips</span>
-                <h1 style="font-size: clamp(2rem, 5vw, 3.5rem); margin: 20px 0 15px; line-height: 1.2;">The Art of Searing Wagyu: <span class="text-gradient">Tips from Our Executive Chef</span></h1>
-                <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap; color: var(--text-muted);">
-                    <div style="display: flex; align-items: center; gap: 10px;">
-                        <img src="https://ui-avatars.com/api/?name=Chef+Marcus&background=ffcc00&color=000" alt="Chef Marcus" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--primary);">
-                        <span>Chef Marcus Thorne</span>
+                <span id="hero-category-tag" style="background: var(--accent-color); color: #000; padding: 6px 16px; border-radius: 20px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">Category</span>
+                <h1 id="hero-title" style="color: #ffffff; font-size: clamp(2rem, 5vw, 3.2rem); margin: 20px 0 15px; line-height: 1.2;">Title</h1>
+                <div class="hero-meta" style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap; color: rgba(255, 255, 255, 0.85);">
+                    <div style="display: flex; align-items: center; gap: 10px; color: #ffffff;">
+                        <img id="author-avatar" src="" alt="Author" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--accent-color); object-fit: cover;">
+                        <span id="author-name" style="color: #ffffff; font-weight: 600;">Author Name</span>
                     </div>
-                    <span><i class="fas fa-calendar"></i> May 15, 2026</span>
-                    <span><i class="fas fa-clock"></i> 8 min read</span>
+                    <span><i class="fas fa-calendar" style="margin-right: 5px;"></i> <span id="post-date">Date</span></span>
+                    <span><i class="fas fa-clock" style="margin-right: 5px;"></i> <span id="post-readtime">Read Time</span></span>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Article Body -->
-    <article class="section-padding">
+    <article id="article-section" class="section-padding">
         <div class="container" style="max-width: 860px;">
-            <div style="font-size: 1.1rem; line-height: 1.9; color: var(--text-muted);" data-aos="fade-up">
-                <p style="font-size: 1.2rem; color: var(--text-main); margin-bottom: 30px; font-weight: 500;">
-                    Wagyu beef is one of the most prized proteins on the planet. Its extraordinary marbling, buttery texture, and umami-rich depth of flavour make it an entirely different cooking challenge compared to conventional beef. Searing it correctly is an art form.
-                </p>
-
-                <h2 style="color: var(--text-main); margin: 40px 0 20px; font-size: 1.8rem;">Understanding the Marbling</h2>
-                <p style="margin-bottom: 30px;">The key to wagyu's signature richness is its intramuscular fat — the intricate web of white fat laced throughout the muscle tissue. This fat melts at a lower temperature than standard beef fat, which means <strong style="color: var(--text-main);">your searing technique must be adapted accordingly.</strong></p>
-
-                <div class="glass" style="padding: 35px 40px; border-radius: var(--radius-md); margin: 40px 0; border-left: 5px solid var(--primary);">
-                    <p style="color: var(--text-main); font-style: italic; margin: 0; font-size: 1.1rem;">"A great wagyu steak isn't cooked — it's persuaded. You never force it. You listen to the sizzle and let the fat tell you when it's ready."</p>
-                    <p style="margin: 15px 0 0; font-size: 0.9rem; color: var(--primary); font-weight: 700;">— Chef Marcus Thorne, FuelUp Executive Chef</p>
-                </div>
-
-                <h2 style="color: var(--text-main); margin: 40px 0 20px; font-size: 1.8rem;">The 5 Golden Rules</h2>
-                <div style="display: grid; gap: 20px; margin-bottom: 30px;">
-                    <div class="glass" style="padding: 25px; border-radius: var(--radius-md); display: flex; gap: 20px; align-items: flex-start;">
-                        <span style="color: var(--primary); font-size: 1.8rem; font-weight: 900; line-height: 1;">01</span>
-                        <div><h4 style="color: var(--text-main); margin-bottom: 8px;">Rest at Room Temperature</h4><p style="margin: 0; font-size: 0.95rem;">Take the steak out of the fridge 30-45 minutes before cooking. Cold wagyu contracts and cooks unevenly.</p></div>
-                    </div>
-                    <div class="glass" style="padding: 25px; border-radius: var(--radius-md); display: flex; gap: 20px; align-items: flex-start;">
-                        <span style="color: var(--primary); font-size: 1.8rem; font-weight: 900; line-height: 1;">02</span>
-                        <div><h4 style="color: var(--text-main); margin-bottom: 8px;">Dry the Surface Completely</h4><p style="margin: 0; font-size: 0.95rem;">Pat with paper towels until bone dry. Surface moisture is the enemy of the Maillard reaction crust.</p></div>
-                    </div>
-                    <div class="glass" style="padding: 25px; border-radius: var(--radius-md); display: flex; gap: 20px; align-items: flex-start;">
-                        <span style="color: var(--primary); font-size: 1.8rem; font-weight: 900; line-height: 1;">03</span>
-                        <div><h4 style="color: var(--text-main); margin-bottom: 8px;">Season Minimally</h4><p style="margin: 0; font-size: 0.95rem;">Coarse sea salt and cracked black pepper only. The beef's own flavour is the star — don't compete with it.</p></div>
-                    </div>
-                    <div class="glass" style="padding: 25px; border-radius: var(--radius-md); display: flex; gap: 20px; align-items: flex-start;">
-                        <span style="color: var(--primary); font-size: 1.8rem; font-weight: 900; line-height: 1;">04</span>
-                        <div><h4 style="color: var(--text-main); margin-bottom: 8px;">Medium-High Heat, Cast Iron Pan</h4><p style="margin: 0; font-size: 0.95rem;">Not screaming hot like standard beef. Medium-high on cast iron gives even heat distribution and a clean sear without burning the melting fat.</p></div>
-                    </div>
-                    <div class="glass" style="padding: 25px; border-radius: var(--radius-md); display: flex; gap: 20px; align-items: flex-start;">
-                        <span style="color: var(--primary); font-size: 1.8rem; font-weight: 900; line-height: 1;">05</span>
-                        <div><h4 style="color: var(--text-main); margin-bottom: 8px;">Rest After Cooking</h4><p style="margin: 0; font-size: 0.95rem;">Always rest for at least half the cooking time. Cutting too soon releases precious juices that should redistribute through the meat.</p></div>
-                    </div>
-                </div>
-
-                <p style="margin-bottom: 30px;">At FuelUp, every wagyu dish passes through our 3-chef quality gate before it ever reaches your door. Our central kitchen maintains a strict temperature protocol from sourcing to delivery — ensuring that the experience you get is the one our chefs intended.</p>
+            <!-- Dynamic Content Container -->
+            <div id="dynamic-content-body" class="details-container" data-aos="fade-up">
+                <!-- Javascript will inject custom structure here -->
             </div>
 
             <!-- Tags & Share -->
             <div style="border-top: 1px solid var(--border-color); padding-top: 40px; margin-top: 60px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;" data-aos="fade-up">
-                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                    <span style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; color: var(--text-muted);">#ChefTips</span>
-                    <span style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; color: var(--text-muted);">#WagyuBeef</span>
-                    <span style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; color: var(--text-muted);">#GourmetCooking</span>
+                <div id="post-tags-container" style="display: flex; gap: 10px; flex-wrap: wrap;">
+                    <!-- Tags injected here -->
                 </div>
                 <div>
                     <span style="color: var(--text-muted); margin-right: 15px; font-size: 0.9rem;">Share:</span>
@@ -126,6 +352,11 @@
                 </div>
             </div>
 
+            <!-- Dynamic CTA Banner -->
+            <div id="dynamic-cta-container" data-aos="zoom-in">
+                <!-- CTA Banner injected here -->
+            </div>
+
             <!-- Navigation -->
             <div style="display: flex; justify-content: space-between; margin-top: 50px; flex-wrap: wrap; gap: 15px;" data-aos="fade-up">
                 <a href="blog.html" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Back to Blog</a>
@@ -133,6 +364,16 @@
             </div>
         </div>
     </article>
+
+    <!-- Related Articles Section -->
+    <section class="related-section">
+        <div class="container">
+            <h2 style="font-size: 2rem; color: var(--text-main); font-weight: 800; text-align: center;">Related <span class="text-gradient">Stories</span></h2>
+            <div id="related-posts-grid" class="related-grid">
+                <!-- Related posts cards injected here -->
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -183,6 +424,253 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/blog-data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Helper to convert hex to RGB
+            const hexToRgb = (hex) => {
+                let c;
+                if(/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)){
+                    c = hex.substring(1).split('');
+                    if(c.length == 3){
+                        c = [c[0], c[0], c[1], c[1], c[2], c[2]];
+                    }
+                    c = '0x' + c.join('');
+                    return [(c>>16)&255, (c>>8)&255, c&255].join(',');
+                }
+                return '255, 204, 0';
+            };
+
+            // Get selected blog from URL parameter
+            const params = new URLSearchParams(window.location.search);
+            const blogId = params.get('id') || 'chef-tips-0';
+            
+            // Look up post in our dataset
+            const post = BLOG_POSTS_DATA[blogId] || BLOG_POSTS_DATA['chef-tips-0'];
+            
+            // Set dynamic Document Title and Meta Description
+            document.title = post.title + " | FuelUp Stories";
+            const metaDescription = document.querySelector('meta[name="description"]');
+            if (metaDescription) {
+                metaDescription.setAttribute('content', post.intro.substring(0, 155) + "...");
+            }
+
+            // Apply accent variables
+            const root = document.documentElement;
+            root.style.setProperty('--accent-color', post.accentColor);
+            root.style.setProperty('--accent-rgb', hexToRgb(post.accentColor));
+
+            // Set article layout class
+            const articleElement = document.getElementById('article-section');
+            articleElement.className = `section-padding layout-${post.layout}`;
+
+            // Populate Hero
+            document.getElementById('hero-bg-img').src = post.heroImg;
+            document.getElementById('hero-bg-img').alt = post.title;
+            
+            const categoryTag = document.getElementById('hero-category-tag');
+            categoryTag.innerText = post.category;
+            
+            const heroTitle = document.getElementById('hero-title');
+            heroTitle.innerText = post.title;
+            
+            document.getElementById('author-avatar').src = post.authorImg;
+            document.getElementById('author-avatar').alt = post.author;
+            document.getElementById('author-name').innerText = post.author;
+            document.getElementById('post-date').innerText = post.date;
+            document.getElementById('post-readtime').innerText = post.readTime;
+
+            // Populate tags
+            const tagsContainer = document.getElementById('post-tags-container');
+            tagsContainer.innerHTML = '';
+            post.tags.forEach(tag => {
+                const tagSpan = document.createElement('span');
+                tagSpan.style.background = 'var(--bg-card)';
+                tagSpan.style.border = '1px solid var(--border-color)';
+                tagSpan.style.padding = '6px 16px';
+                tagSpan.style.borderRadius = '20px';
+                tagSpan.style.fontSize = '0.85rem';
+                tagSpan.style.color = 'var(--text-muted)';
+                tagSpan.innerText = tag;
+                tagsContainer.appendChild(tagSpan);
+            });
+
+            // Populate Content Body
+            const bodyContainer = document.getElementById('dynamic-content-body');
+            bodyContainer.innerHTML = '';
+
+            // 1. Intro Paragraph
+            const introP = document.createElement('p');
+            introP.style.fontSize = '1.25rem';
+            introP.style.color = 'var(--text-main)';
+            introP.style.fontWeight = '500';
+            introP.style.marginBottom = '35px';
+            introP.innerText = post.intro;
+            bodyContainer.appendChild(introP);
+
+            // 2. Parse Content Blocks
+            post.contentBlocks.forEach(block => {
+                if (block.type === 'paragraph') {
+                    const p = document.createElement('p');
+                    p.innerText = block.text;
+                    bodyContainer.appendChild(p);
+                } 
+                else if (block.type === 'heading') {
+                    const h2 = document.createElement('h2');
+                    h2.innerText = block.text;
+                    bodyContainer.appendChild(h2);
+                } 
+                else if (block.type === 'quote') {
+                    const quoteDiv = document.createElement('div');
+                    quoteDiv.className = 'article-quote';
+                    
+                    const quoteP = document.createElement('p');
+                    quoteP.innerText = `"${block.text}"`;
+                    quoteDiv.appendChild(quoteP);
+
+                    if (block.author) {
+                        const authorP = document.createElement('p');
+                        authorP.style.margin = '15px 0 0';
+                        authorP.style.fontSize = '0.9rem';
+                        authorP.style.color = 'var(--accent-color)';
+                        authorP.style.fontWeight = '700';
+                        authorP.innerText = `— ${block.author}`;
+                        quoteDiv.appendChild(authorP);
+                    }
+                    bodyContainer.appendChild(quoteDiv);
+                } 
+                else if (block.type === 'list') {
+                    const listContainer = document.createElement('div');
+                    listContainer.style.display = 'grid';
+                    listContainer.style.gap = '20px';
+                    listContainer.style.marginBottom = '35px';
+
+                    block.items.forEach((item, index) => {
+                        const numStr = (index + 1).toString().padStart(2, '0');
+                        
+                        if (post.layout === 'tutorial') {
+                            const stepCard = document.createElement('div');
+                            stepCard.className = 'tutorial-step-card';
+                            stepCard.innerHTML = `
+                                <span class="step-num">${numStr}</span>
+                                <div>
+                                    <h4 style="color: var(--text-main); margin-bottom: 8px; font-weight: 700;">${item.title}</h4>
+                                    <p style="margin: 0; font-size: 0.95rem;">${item.desc}</p>
+                                </div>
+                            `;
+                            listContainer.appendChild(stepCard);
+                        } 
+                        else if (post.layout === 'futuristic') {
+                            const cyberCard = document.createElement('div');
+                            cyberCard.className = 'cyber-list-item';
+                            cyberCard.innerHTML = `
+                                <h4 style="color: var(--text-main); margin-bottom: 8px; font-weight: 600; display: flex; align-items: center; gap: 10px;">
+                                    <span style="color: var(--accent-color); font-weight: 900;">[${numStr}]</span> ${item.title}
+                                </h4>
+                                <p style="margin: 0; font-size: 0.95rem;">${item.desc}</p>
+                            `;
+                            listContainer.appendChild(cyberCard);
+                        }
+                        else { // elegant or creative
+                            const standardCard = document.createElement('div');
+                            standardCard.className = post.layout === 'creative' ? 'creative-card' : 'glass';
+                            if (post.layout !== 'creative') {
+                                standardCard.style.padding = '25px';
+                                standardCard.style.borderRadius = 'var(--radius-md)';
+                            }
+                            standardCard.innerHTML = `
+                                <h4 style="color: var(--text-main); margin-bottom: 8px; font-weight: 700; color: var(--accent-color);">${numStr}. ${item.title}</h4>
+                                <p style="margin: 0; font-size: 0.95rem;">${item.desc}</p>
+                            `;
+                            listContainer.appendChild(standardCard);
+                        }
+                    });
+                    bodyContainer.appendChild(listContainer);
+                }
+                else if (block.type === 'faq') {
+                    const faqContainer = document.createElement('div');
+                    faqContainer.style.marginTop = '40px';
+                    faqContainer.style.borderTop = '1px solid var(--border-color)';
+                    faqContainer.style.paddingTop = '30px';
+
+                    const faqTitle = document.createElement('h3');
+                    faqTitle.style.fontSize = '1.4rem';
+                    faqTitle.style.fontWeight = '700';
+                    faqTitle.style.marginBottom = '20px';
+                    faqTitle.style.color = 'var(--text-main)';
+                    faqTitle.innerText = "Frequently Asked Questions";
+                    faqContainer.appendChild(faqTitle);
+
+                    block.faqs.forEach(faq => {
+                        const faqBlock = document.createElement('div');
+                        faqBlock.style.marginBottom = '25px';
+                        faqBlock.innerHTML = `
+                            <h5 style="color: var(--text-main); font-weight: 700; font-size: 1.05rem; margin-bottom: 8px; display: flex; gap: 8px; align-items: flex-start;">
+                                <i class="fas fa-question-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+                                <span>${faq.question}</span>
+                            </h5>
+                            <p style="margin: 0; padding-left: 24px; font-size: 0.95rem; color: var(--text-muted);">${faq.answer}</p>
+                        `;
+                        faqContainer.appendChild(faqBlock);
+                    });
+                    bodyContainer.appendChild(faqContainer);
+                }
+            });
+
+            // Populate Dynamic CTA Section
+            const ctaContainer = document.getElementById('dynamic-cta-container');
+            ctaContainer.innerHTML = '';
+            if (post.cta) {
+                const ctaCard = document.createElement('div');
+                ctaCard.className = 'dynamic-cta-card';
+                ctaCard.innerHTML = `
+                    <div class="cta-content">
+                        <h3 style="color: #ffffff; font-size: 1.8rem; font-weight: 800; margin-bottom: 12px;">${post.cta.title}</h3>
+                        <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem; margin: 0; line-height: 1.6;">${post.cta.desc}</p>
+                    </div>
+                    <div class="cta-action">
+                        <a href="${post.cta.link}" class="btn btn-primary" style="background: var(--accent-color); color: #000; font-weight: 700; padding: 14px 30px; box-shadow: 0 0 15px rgba(var(--accent-rgb), 0.3);">${post.cta.btnText}</a>
+                    </div>
+                `;
+                ctaContainer.appendChild(ctaCard);
+            }
+
+            // Populate Related Posts Grid
+            const relatedGrid = document.getElementById('related-posts-grid');
+            relatedGrid.innerHTML = '';
+            post.relatedPosts.forEach(relId => {
+                const relPost = BLOG_POSTS_DATA[relId];
+                if (relPost) {
+                    const card = document.createElement('div');
+                    card.className = 'blog-card';
+                    card.style.background = 'var(--bg-card)';
+                    card.style.border = '1px solid var(--border-color)';
+                    card.style.borderRadius = 'var(--radius-md)';
+                    card.style.overflow = 'hidden';
+                    card.innerHTML = `
+                        <img src="${relPost.heroImg}" alt="${relPost.title}" style="width: 100%; height: 200px; object-fit: cover;">
+                        <div style="padding: 25px;">
+                            <div style="display: flex; gap: 15px; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 12px;">
+                                <span><i class="fas fa-calendar"></i> ${relPost.date}</span>
+                                <span><i class="fas fa-clock"></i> ${relPost.readTime}</span>
+                            </div>
+                            <h4 style="font-size: 1.15rem; line-height: 1.4; color: var(--text-main); font-weight: 700; margin-bottom: 10px;">${relPost.title}</h4>
+                            <a href="blog-details.html?id=${relPost.id}" style="color: var(--accent-color); font-weight: 600; display: inline-block; margin-top: 15px; font-size: 0.9rem;">Read Story <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    `;
+                    relatedGrid.appendChild(card);
+                }
+            });
+
+            // Re-trigger AOS animations on newly inserted DOM elements
+            if (typeof AOS !== 'undefined') {
+                AOS.init({
+                    duration: 800,
+                    once: true
+                });
+            }
+        });
+    </script>
     <script src="js/main.js"></script>
 </body>
 </html>

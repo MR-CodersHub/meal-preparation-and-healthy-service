@@ -1504,3 +1504,31 @@ select option {
     }
 }
 
+/* Static dark hero section layout (used in blog details, service details) where the background is a static dark image.
+   We force the text and components inside it to stay readable and light regardless of light/dark theme. */
+.static-dark-hero {
+    color: #ffffff !important;
+}
+
+.static-dark-hero h1, 
+.static-dark-hero h2, 
+.static-dark-hero h3 {
+    color: #ffffff !important;
+}
+
+.static-dark-hero p, 
+.static-dark-hero .hero-meta, 
+.static-dark-hero .hero-meta span {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.static-dark-hero .hero-meta div span {
+    color: #ffffff !important;
+}
+
+.static-dark-hero .text-gradient {
+    background: linear-gradient(90deg, #ffffff 0%, var(--primary) 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+

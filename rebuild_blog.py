@@ -20,11 +20,11 @@ categories = [
         'id': 'healthy-eating',
         'posts': [
             {'img': 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=600&q=80', 'date': 'May 12, 2026', 'tag': 'Healthy Eating', 'title': 'Macro-Balancing: Why Your Lunch Choice Matters', 'desc': 'How a balanced ratio of complex carbs and lean protein can prevent the dreaded afternoon slump.'},
-            {'img': 'https://images.unsplash.com/photo-1498837167922-41c53bbf0e41?auto=format&fit=crop&w=600&q=80', 'date': 'May 02, 2026', 'tag': 'Nutrition', 'title': "Superfoods of 2026: What's Next in Nutrition?", 'desc': 'From ancient grains to deep-sea kelp, discover the ingredients that are taking the wellness world by storm.'},
+            {'img': 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=600&q=80', 'date': 'May 02, 2026', 'tag': 'Nutrition', 'title': "Superfoods of 2026: What's Next in Nutrition?", 'desc': 'From ancient grains to deep-sea kelp, discover the ingredients that are taking the wellness world by storm.'},
             {'img': 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80', 'date': 'Apr 25, 2026', 'tag': 'Wellness', 'title': 'The Gut-Brain Connection in Modern Diets', 'desc': 'Understanding how your daily food choices directly impact your mood and cognitive function.'},
             {'img': 'https://images.unsplash.com/photo-1494390248081-4e521a5940db?auto=format&fit=crop&w=600&q=80', 'date': 'Apr 18, 2026', 'tag': 'Meal Prep', 'title': 'High-Protein Plant-Based Alternatives', 'desc': 'A breakdown of the most bioavailable plant proteins to fuel your workouts and recovery.'},
             {'img': 'https://images.unsplash.com/photo-1478144592103-25e218a04891?auto=format&fit=crop&w=600&q=80', 'date': 'Apr 10, 2026', 'tag': 'Dietary Science', 'title': 'Intermittent Fasting: Myths vs Reality', 'desc': 'We dive into the latest clinical research on time-restricted eating and its metabolic benefits.'},
-            {'img': 'https://images.unsplash.com/photo-1490818387583-1b057d5f0502?auto=format&fit=crop&w=600&q=80', 'date': 'Apr 01, 2026', 'tag': 'Healthy Habits', 'title': 'Hydration Beyond Water', 'desc': 'Exploring electrolyte balance and water-rich foods that keep you hydrated more efficiently than just drinking water.'}
+            {'img': 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=600&q=80', 'date': 'Apr 01, 2026', 'tag': 'Healthy Habits', 'title': 'Hydration Beyond Water', 'desc': 'Exploring electrolyte balance and water-rich foods that keep you hydrated more efficiently than just drinking water.'}
         ]
     },
     {
@@ -68,7 +68,7 @@ for cat in categories:
                     </div>
                     <h4>{post['title']}</h4>
                     <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 15px;">{post['desc']}</p>
-                    <a href="blog-details.html" style="color: var(--primary); display: inline-block; margin-top: 20px; font-weight: 600;">Read More <i class="fas fa-arrow-right"></i></a>
+                    <a href="blog-details.html?id={cat['id']}-{idx}" style="color: var(--primary); display: inline-block; margin-top: 20px; font-weight: 600;">Read More <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>'''
 

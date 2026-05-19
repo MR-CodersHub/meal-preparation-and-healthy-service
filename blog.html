@@ -499,25 +499,26 @@
     <script>
         // Smooth blog filtering logic
         document.addEventListener('DOMContentLoaded', () => {
-            const filterBtns = document.querySelectorAll('.blog-filter');
-            const blogCards = document.querySelectorAll('.blog-card');
-
-            // Setup initial transition state
-            blogCards.forEach(card => {
-                card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-                card.style.opacity = '1';
-                card.style.transform = 'scale(1)';
-            });
+            // Select only the filter buttons inside the filters container
+            const filterBtns = document.querySelectorAll('.blog-filters .blog-filter');
 
             filterBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
+                    const filter = btn.getAttribute('data-filter');
+                    if (!filter) return;
+
                     // Update active state
                     filterBtns.forEach(b => b.classList.remove('active'));
                     btn.classList.add('active');
 
-                    const filter = btn.getAttribute('data-filter');
+                    // Dynamically select cards because the skeleton loader replaces innerHTML,
+                    // causing previously stored DOM element references to become stale.
+                    const blogCards = document.querySelectorAll('.blog-grid .blog-card');
 
                     blogCards.forEach(card => {
+                        // Ensure styles are set dynamically
+                        card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                        
                         // Start fade out
                         card.style.opacity = '0';
                         card.style.transform = 'scale(0.95)';

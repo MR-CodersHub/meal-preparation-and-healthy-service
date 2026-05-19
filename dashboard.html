@@ -49,50 +49,65 @@
             <div class="dash-layout-grid">
                 <div style="display: flex; flex-direction: column; gap: 30px;">
                     <!-- Active Order Card -->
-                    <div class="dash-card" style="background: linear-gradient(135deg, var(--bg-card) 0%, rgba(255,204,0,0.05) 100%);">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-                            <h3 style="color: var(--primary);">Live Order Tracking</h3>
-                            <span style="font-size: 0.8rem; background: var(--primary); color: #000; padding: 4px 12px; border-radius: 20px; font-weight: 700;">ETA: 12 MINS</span>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 30px; flex-wrap: wrap;">
-                            <div style="flex: 1; min-width: 100px;">
-                                <p style="font-size: 0.9rem; color: var(--text-muted);">Current Order: <strong>#FL-9084</strong></p>
-                                <p style="font-size: 1.1rem; margin-top: 5px;">Teriyaki Salmon Bowl</p>
+                    <div class="dash-card" style="background: linear-gradient(135deg, var(--bg-card) 0%, rgba(255,204,0,0.05) 100%); position: relative; overflow: hidden;">
+                        <i class="fas fa-motorcycle" style="position: absolute; right: -20px; bottom: -20px; font-size: 150px; opacity: 0.03; z-index: 0;"></i>
+                        <div style="position: relative; z-index: 1;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; flex-wrap: wrap; gap: 10px;">
+                                <h3 style="color: var(--primary); margin: 0;">Live Order Tracking</h3>
+                                <span style="font-size: 0.8rem; background: var(--primary); color: #000; padding: 5px 15px; border-radius: 20px; font-weight: 800; box-shadow: 0 4px 10px rgba(255,204,0,0.3);">ETA: 12 MINS</span>
                             </div>
-                            <div style="flex: 2; min-width: 150px; height: 4px; background: var(--border-color); border-radius: 2px; position: relative;">
-                                <div style="position: absolute; width: 65%; height: 100%; background: var(--primary); border-radius: 2px;"></div>
-                                <div style="position: absolute; left: 65%; top: -8px; width: 20px; height: 20px; background: var(--primary); border-radius: 50%; border: 4px solid var(--bg-dark);"></div>
+                            <div style="display: flex; align-items: center; gap: 30px; flex-wrap: wrap;">
+                                <div style="flex: 1; min-width: 150px;">
+                                    <p style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Current Order: <strong>#FL-9084</strong></p>
+                                    <p style="font-size: 1.2rem; margin-top: 8px; font-weight: 700;">Teriyaki Salmon Bowl</p>
+                                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 5px;"><i class="fas fa-map-marker-alt" style="color: var(--primary); margin-right: 5px;"></i> Out for delivery</p>
+                                </div>
+                                <div style="flex: 2; min-width: 200px;">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">
+                                        <span>Prep</span>
+                                        <span>Cooking</span>
+                                        <span style="color: var(--primary);">On the way</span>
+                                        <span>Delivered</span>
+                                    </div>
+                                    <div style="width: 100%; height: 6px; background: var(--border-color); border-radius: 3px; position: relative;">
+                                        <div style="position: absolute; width: 75%; height: 100%; background: var(--primary); border-radius: 3px; box-shadow: 0 0 10px var(--accent-glow);"></div>
+                                        <div style="position: absolute; left: 75%; top: -6px; width: 18px; height: 18px; background: var(--primary); border-radius: 50%; border: 3px solid var(--bg-card); box-shadow: 0 0 10px rgba(255,204,0,0.5); transform: translateX(-50%);"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Recent Deliveries -->
                     <div class="dash-card">
-                        <h3 style="margin-bottom: 25px;">Recent Deliveries</h3>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;">
+                            <h3 style="margin: 0;">Recent Deliveries</h3>
+                            <a href="user-orders.html" style="font-size: 0.85rem; color: var(--primary); font-weight: 600;">View History <i class="fas fa-arrow-right" style="margin-left: 5px; font-size: 0.75rem;"></i></a>
+                        </div>
                         <div style="display: grid; gap: 20px;">
-                            <div class="glass" style="padding: 15px; border-radius: var(--radius-md); display: flex; justify-content: space-between; align-items: center;">
-                                <div style="display: flex; gap: 15px; align-items: center;">
-                                    <div style="width: 50px; height: 50px; background: var(--border-color); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-                                        <i class="fas fa-hamburger" style="color: var(--primary);"></i>
+                            <div class="glass" style="padding: 15px 20px; border-radius: var(--radius-md); display: flex; justify-content: space-between; align-items: center; transition: var(--transition); cursor: pointer;" onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='var(--border-color)'">
+                                <div style="display: flex; gap: 20px; align-items: center;">
+                                    <div style="width: 55px; height: 55px; background: rgba(255,204,0,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                        <i class="fas fa-hamburger" style="color: var(--primary); font-size: 1.5rem;"></i>
                                     </div>
                                     <div>
-                                        <p style="font-weight: 600;">Double Truffle Burger</p>
-                                        <p style="font-size: 0.75rem; color: var(--text-muted);">May 12, 2026 • Delivered</p>
+                                        <p style="font-weight: 700; font-size: 1.05rem;">Double Truffle Burger</p>
+                                        <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 3px;"><i class="fas fa-check-circle" style="color: #4caf50; margin-right: 5px;"></i> Delivered on May 12, 2026</p>
                                     </div>
                                 </div>
-                                <a href="#" style="color: var(--primary); font-size: 0.8rem;">Reorder</a>
+                                <button class="btn btn-outline" style="padding: 6px 15px; font-size: 0.8rem;">Reorder</button>
                             </div>
-                            <div class="glass" style="padding: 15px; border-radius: var(--radius-md); display: flex; justify-content: space-between; align-items: center;">
-                                <div style="display: flex; gap: 15px; align-items: center;">
-                                    <div style="width: 50px; height: 50px; background: var(--border-color); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-                                        <i class="fas fa-pizza-slice" style="color: var(--primary);"></i>
+                            <div class="glass" style="padding: 15px 20px; border-radius: var(--radius-md); display: flex; justify-content: space-between; align-items: center; transition: var(--transition); cursor: pointer;" onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='var(--border-color)'">
+                                <div style="display: flex; gap: 20px; align-items: center;">
+                                    <div style="width: 55px; height: 55px; background: rgba(255,204,0,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                        <i class="fas fa-pizza-slice" style="color: var(--primary); font-size: 1.5rem;"></i>
                                     </div>
                                     <div>
-                                        <p style="font-weight: 600;">Artisan Veggie Pizza</p>
-                                        <p style="font-size: 0.75rem; color: var(--text-muted);">May 08, 2026 • Delivered</p>
+                                        <p style="font-weight: 700; font-size: 1.05rem;">Artisan Veggie Pizza</p>
+                                        <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 3px;"><i class="fas fa-check-circle" style="color: #4caf50; margin-right: 5px;"></i> Delivered on May 08, 2026</p>
                                     </div>
                                 </div>
-                                <a href="#" style="color: var(--primary); font-size: 0.8rem;">Reorder</a>
+                                <button class="btn btn-outline" style="padding: 6px 15px; font-size: 0.8rem;">Reorder</button>
                             </div>
                         </div>
                     </div>
@@ -101,33 +116,94 @@
                 <!-- Right Sidebar -->
                 <div style="display: flex; flex-direction: column; gap: 30px;">
                     <!-- Profile Card -->
-                    <div class="dash-card" style="text-align: center;">
-                        <img src="https://ui-avatars.com/api/?name=Alex+Smith&background=ffcc00&color=000" style="width: 80px; border-radius: 50%; border: 3px solid var(--primary); margin-bottom: 15px;">
-                        <h3>Alex Smith</h3>
-                        <p style="color: var(--text-muted); font-size: 0.85rem;">Platinum Member Since 2023</p>
-                        <div style="display: flex; gap: 10px; justify-content: center; margin-top: 20px;">
-                            <div style="background: var(--bg-surface); padding: 10px; border-radius: 10px; flex: 1;">
-                                <p style="color: var(--primary); font-weight: 800;">45</p>
-                                <p style="font-size: 0.7rem;">Orders</p>
+                    <div class="dash-card" style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+                        <div style="position: relative; margin-bottom: 20px;">
+                            <img src="https://ui-avatars.com/api/?name=Alex+Smith&background=ffcc00&color=000" style="width: 90px; height: 90px; border-radius: 50%; border: 4px solid var(--primary); padding: 3px; background: var(--bg-card); object-fit: cover;">
+                            <div style="position: absolute; bottom: 0; right: 0; background: #4caf50; width: 22px; height: 22px; border-radius: 50%; border: 3px solid var(--bg-card);" title="Online"></div>
+                        </div>
+                        <h3 style="font-size: 1.4rem; margin-bottom: 5px;">Alex Smith</h3>
+                        <p style="color: var(--primary); font-size: 0.85rem; font-weight: 600; background: rgba(255,204,0,0.1); padding: 4px 12px; border-radius: 20px; display: inline-block;">Platinum Member Since 2023</p>
+                        <div style="display: flex; gap: 15px; justify-content: center; margin-top: 25px; width: 100%;">
+                            <div style="background: var(--bg-surface); padding: 15px 10px; border-radius: 12px; flex: 1; border: 1px solid var(--border-color);">
+                                <p style="color: var(--primary); font-weight: 800; font-size: 1.3rem;">45</p>
+                                <p style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 3px;">Orders</p>
                             </div>
-                            <div style="background: var(--bg-surface); padding: 10px; border-radius: 10px; flex: 1;">
-                                <p style="color: var(--primary); font-weight: 800;">1.2k</p>
-                                <p style="font-size: 0.7rem;">Points</p>
+                            <div style="background: var(--bg-surface); padding: 15px 10px; border-radius: 12px; flex: 1; border: 1px solid var(--border-color);">
+                                <p style="color: var(--primary); font-weight: 800; font-size: 1.3rem;">1.2k</p>
+                                <p style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 3px;">Points</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Saved Items -->
+                    <!-- Saved Favorites -->
                     <div class="dash-card">
-                        <h4 style="margin-bottom: 20px;">Saved Favorites</h4>
-                        <div style="display: flex; flex-direction: column; gap: 15px;">
-                            <div style="display: flex; gap: 12px; align-items: center;">
-                                <div style="width: 40px; height: 40px; background: var(--border-color); border-radius: 8px;"></div>
-                                <span style="font-size: 0.9rem;">Vegan Buddha Bowl</span>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                            <h4 style="margin: 0; font-size: 1.1rem;">Saved Favorites</h4>
+                            <a href="user-favorites.html" style="font-size: 0.8rem; color: var(--primary);">View All</a>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <div style="display: flex; gap: 15px; align-items: center; padding: 10px; border-radius: var(--radius-sm); background: var(--bg-surface); transition: var(--transition); border: 1px solid var(--border-color);" onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='var(--border-color)'">
+                                <img src="https://images.unsplash.com/photo-1543339308-43e59d6b73a6?auto=format&fit=crop&w=150&q=80" style="width: 50px; height: 50px; border-radius: 8px; object-fit: cover;">
+                                <div style="flex: 1;">
+                                    <p style="font-size: 0.95rem; font-weight: 700; margin: 0;">Vegan Buddha Bowl</p>
+                                    <p style="font-size: 0.8rem; color: var(--primary); margin: 3px 0 0;">$15.50</p>
+                                </div>
+                                <button aria-label="Remove Favorite" style="background: none; border: none; cursor: pointer; padding: 5px;"><i class="fas fa-heart" style="color: #ff4d4d; font-size: 1.1rem;"></i></button>
                             </div>
-                            <div style="display: flex; gap: 12px; align-items: center;">
-                                <div style="width: 40px; height: 40px; background: var(--border-color); border-radius: 8px;"></div>
-                                <span style="font-size: 0.9rem;">BBQ Chicken Feast</span>
+                            <div style="display: flex; gap: 15px; align-items: center; padding: 10px; border-radius: var(--radius-sm); background: var(--bg-surface); transition: var(--transition); border: 1px solid var(--border-color);" onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='var(--border-color)'">
+                                <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=150&q=80" style="width: 50px; height: 50px; border-radius: 8px; object-fit: cover;">
+                                <div style="flex: 1;">
+                                    <p style="font-size: 0.95rem; font-weight: 700; margin: 0;">BBQ Chicken Feast</p>
+                                    <p style="font-size: 0.8rem; color: var(--primary); margin: 3px 0 0;">$18.50</p>
+                                </div>
+                                <button aria-label="Remove Favorite" style="background: none; border: none; cursor: pointer; padding: 5px;"><i class="fas fa-heart" style="color: #ff4d4d; font-size: 1.1rem;"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Activity Log -->
+                    <div class="dash-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;">
+                            <h4 style="margin: 0; font-size: 1.1rem;">Recent Activity</h4>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 20px; position: relative;">
+                            <!-- Vertical Timeline Line -->
+                            <div style="position: absolute; left: 15px; top: 15px; bottom: 15px; width: 2px; background: var(--border-color); z-index: 0;"></div>
+                            
+                            <!-- Log Item 1 -->
+                            <div style="display: flex; gap: 15px; position: relative; z-index: 1;">
+                                <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--bg-surface); border: 2px solid var(--primary); display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 0 0 4px var(--bg-card);">
+                                    <i class="fas fa-box-open" style="color: var(--primary); font-size: 0.8rem;"></i>
+                                </div>
+                                <div>
+                                    <p style="font-size: 0.9rem; font-weight: 700; margin: 0;">Order Delivered</p>
+                                    <p style="font-size: 0.8rem; color: var(--text-muted); margin: 4px 0 0; line-height: 1.4;">Order #FL-9083 arrived successfully.</p>
+                                    <p style="font-size: 0.7rem; color: var(--text-muted); margin-top: 5px; opacity: 0.7;"><i class="far fa-clock" style="margin-right: 4px;"></i> 2 hours ago</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Log Item 2 -->
+                            <div style="display: flex; gap: 15px; position: relative; z-index: 1;">
+                                <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--bg-surface); border: 2px solid #4caf50; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 0 0 4px var(--bg-card);">
+                                    <i class="fas fa-star" style="color: #4caf50; font-size: 0.8rem;"></i>
+                                </div>
+                                <div>
+                                    <p style="font-size: 0.9rem; font-weight: 700; margin: 0;">Earned 150 Points</p>
+                                    <p style="font-size: 0.8rem; color: var(--text-muted); margin: 4px 0 0; line-height: 1.4;">Reward from your Truffle Burger order.</p>
+                                    <p style="font-size: 0.7rem; color: var(--text-muted); margin-top: 5px; opacity: 0.7;"><i class="far fa-clock" style="margin-right: 4px;"></i> Yesterday</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Log Item 3 -->
+                            <div style="display: flex; gap: 15px; position: relative; z-index: 1;">
+                                <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--bg-surface); border: 2px solid var(--border-color); display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 0 0 4px var(--bg-card);">
+                                    <i class="fas fa-cog" style="color: var(--text-muted); font-size: 0.8rem;"></i>
+                                </div>
+                                <div>
+                                    <p style="font-size: 0.9rem; font-weight: 700; margin: 0;">Profile Updated</p>
+                                    <p style="font-size: 0.8rem; color: var(--text-muted); margin: 4px 0 0; line-height: 1.4;">Changed delivery address.</p>
+                                    <p style="font-size: 0.7rem; color: var(--text-muted); margin-top: 5px; opacity: 0.7;"><i class="far fa-clock" style="margin-right: 4px;"></i> May 10, 2026</p>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -1019,8 +1019,11 @@ select option {
         height: 100vh;
         background: var(--bg-surface);
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
+        padding-top: 100px;
+        padding-bottom: 40px;
+        overflow-y: auto;
         transition: var(--transition);
         z-index: 1000;
         box-shadow: -10px 0 30px rgba(0,0,0,0.5);
@@ -1031,7 +1034,14 @@ select option {
     }
 
     .nav-links li {
-        margin: 12px 0;
+        margin: 15px 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-links li a {
+        display: block;
+        padding: 5px 20px;
     }
 
     .nav-btns {

@@ -103,6 +103,13 @@
                 padding-top: 0 !important;
                 padding-bottom: 40px !important;
             }
+            /* Fix last card incorrectly spanning 2 columns because of section titles messing up nth-child */
+            .meal-grid .meal-card:last-child:nth-child(odd) {
+                grid-column: auto !important;
+                justify-self: auto !important;
+                width: 100% !important;
+                max-width: none !important;
+            }
         }
     </style>
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
